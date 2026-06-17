@@ -67,7 +67,7 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 .brand .mark span{font-size:1rem;color:var(--gold-bright)}
 .brand b{color:var(--gold-bright);font-weight:700}
 .brand-logo{height:92px;width:auto;display:block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
-.footer .brand-logo{height:128px}
+.footer .brand-logo{height:200px}
 @media(max-width:640px){.brand-logo{height:64px}}
 .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
 .nav-links a{font-family:var(--disp);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:.86rem;color:var(--silver)}
@@ -217,7 +217,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
 <!-- TOP UTILITY BAR -->
 <div class="topbar"><div class="wrap">
-  <div class="tb-l">Family-run since 1998 &nbsp;<span class="dot">&bull;</span>&nbsp; Certified solar &amp; Somfy installers</div>
+  <div class="tb-l">Family-run since 1998 &nbsp;<span class="dot">&bull;</span>&nbsp; Certified solar &amp; roller-shutter installers</div>
   <div class="tb-r">
     <a href="tel:+3255214864">&#9742; +32 55 21 48 64</a>
     <a href="mailto:info@alu-dewolf.be">&#9993; info@alu-dewolf.be</a>
@@ -229,9 +229,9 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   <a class="brand" href="#top" aria-label="KDW home"><img class="brand-logo" src="assets/logo-kdw.png" alt="KDW"></a>
   <ul class="nav-links" id="menu">
     <li><a href="#solar">Solar Panels</a></li>
-    <li><a href="#shutters">Roller Shutters</a></li>
+    <li><a href="shutters.html">Roller Shutters</a></li>
     <li><a href="#why">Why Us</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="projects.html">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -255,7 +255,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <div class="t"><span class="ic">&#9733;</span><span><b>4.9/5</b> &nbsp;120+ reviews</span></div>
       <div class="t"><span class="ic">&#9889;</span><span><b>1,200+</b> &nbsp;installations</span></div>
       <div class="t"><span class="ic">&#128737;</span><span><b>10-yr</b> &nbsp;workmanship warranty</span></div>
-      <div class="t"><span class="ic">&#10003;</span><span><b>Certified</b> &nbsp;solar &amp; Somfy</span></div>
+      <div class="t"><span class="ic">&#10003;</span><span><b>Certified</b> &nbsp;solar &amp; shutters</span></div>
     </div>
   </div>
   <div class="hero-badge">
@@ -295,6 +295,12 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     <div class="duo-media"><img src="assets/solar-detail.jpg" alt="Technician installing a black solar panel on a rooftop rail"><div class="edge"></div></div>
   </div>
 
+  <div class="solar-strip reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px">
+    <img src="assets/solar-tiled-roof.jpg" alt="Black solar panels on a Belgian tiled-roof home" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px">
+    <img src="assets/solar-modern-villa.jpg" alt="Modern villa with a full rooftop solar array" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px">
+    <img src="assets/solar-aerial.jpg" alt="Aerial view of a residential rooftop solar installation" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px">
+  </div>
+
   <hr class="hr-gold" style="margin:80px 0">
 
   <!-- BAUER PARTNER -->
@@ -313,30 +319,15 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
   <hr class="hr-gold" style="margin:80px 0">
 
-  <div class="features">
-    <div class="feat reveal"><div class="ic">&#9889;</div><h3>Lower bills, fast</h3><p>Most homes offset 50–70% of their electricity. We model your exact payback before you commit.</p></div>
-    <div class="feat reveal"><div class="ic">&#128267;</div><h3>Battery storage</h3><p>Add storage now or later — keep the energy you make and ride through peak-rate evenings.</p></div>
-    <div class="feat reveal"><div class="ic">&#128241;</div><h3>Smart monitoring</h3><p>Track production, usage and savings in real time. We watch it too, and flag any drop.</p></div>
-    <div class="feat reveal"><div class="ic">&#127981;</div><h3>Certified install</h3><p>In-house certified electricians. Every panel, clamp and cable to standard — no subcontractors.</p></div>
+  <div class="sec-head reveal">
+    <div class="eyebrow">Why homeowners choose us</div>
+    <h2>The <span class="gold">KDW</span> Promise.</h2>
   </div>
-</div></section>
-
-<!-- WHY US -->
-<section class="section" id="why"><div class="wrap">
-  <div class="duo reveal">
-    <div>
-      <div class="eyebrow">Why KDW</div>
-      <h2>Family-run. Workmanship <span class="gold">you can see.</span></h2>
-      <p class="lead">Two generations, one standard. We're a small family team that turns up when we say, keeps the site tidy, and stands behind every install long after the scaffolding comes down.</p>
-      <ul class="checklist">
-        <li><b>25+ years on the tools</b> — solar and shutters are all we do.</li>
-        <li><b>Our own certified crew</b> — never subcontracted to the lowest bidder.</li>
-        <li><b>Premium brands only</b> — Somfy, tier-1 panels, named inverters.</li>
-        <li><b>Real aftercare</b> — one number, the same people, for the life of your system.</li>
-      </ul>
-      <a class="btn btn-steel" href="#projects">See our work</a>
-    </div>
-    <div class="duo-media" style="max-width:320px;margin:0 auto"><img src="assets/koen.jpg" alt="Koen, founder, in front of solar panels" style="aspect-ratio:3/4;object-position:center top;filter:grayscale(1) contrast(1.06)"><div class="edge"></div></div>
+  <div class="features">
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Lower bills, fast</h3><p>Most homes offset 50–70% of their electricity. We model your exact payback before you commit.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></svg></div><h3>Battery storage</h3><p>Add storage now or later — keep the energy you make and ride through peak-rate evenings.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div><h3>Smart monitoring</h3><p>Track production, usage and savings in real time. We watch it too, and flag any drop.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Certified install</h3><p>In-house certified electricians. Every panel, clamp and cable to standard — no subcontractors.</p></div>
   </div>
 
   <hr class="hr-gold" style="margin:80px 0">
@@ -350,16 +341,22 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   </div>
 </div></section>
 
-<!-- PROJECTS / GALLERY -->
-<section class="section" id="projects" style="background:var(--black-2);border-top:1px solid var(--line)"><div class="wrap">
-  <div class="sec-head reveal"><div class="eyebrow">Recent Projects</div><h2>Installs we're proud to put our name on.</h2><p class="muted">Replace with real photos of your own jobs — that's what wins quotes.</p></div>
-  <div class="gallery reveal">
-    <a class="wide tall" href="#"><img src="assets/g-terrace.jpg" alt="Modern villa terrace with automated roller shutters"></a>
-    <a href="#"><img src="assets/gallery-shutters.jpg" alt="Residential automated roller shutter installation"></a>
-    <a href="#"><img src="assets/g-white.jpg" alt="White modern villa with roller shutters"></a>
-    <a class="wide" href="#"><img src="assets/g-blackfacade.jpg" alt="Black-facade home with automated shutters"></a>
-    <a href="#"><img src="assets/solar-rooftop.jpg" alt="Residential rooftop solar installation"></a>
-    <a href="#"><img src="assets/g-detail.jpg" alt="Close-up of an aluminium roller shutter"></a>
+<!-- WHY US -->
+<section class="section" id="why"><div class="wrap">
+  <div class="duo reveal">
+    <div>
+      <div class="eyebrow">Why KDW</div>
+      <h2>Family-run. Workmanship <span class="gold">you can see.</span></h2>
+      <p class="lead">Two generations, one standard. We're a small family team that turns up when we say, keeps the site tidy, and stands behind every install long after the scaffolding comes down.</p>
+      <ul class="checklist">
+        <li><b>25+ years on the tools</b> — solar and shutters are all we do.</li>
+        <li><b>Our own certified crew</b> — never subcontracted to the lowest bidder.</li>
+        <li><b>Premium brands only</b> — tier-1 panels, named inverters, trusted shutter motors.</li>
+        <li><b>Real aftercare</b> — one number, the same people, for the life of your system.</li>
+      </ul>
+      <a class="btn btn-steel" href="projects.html">See our work</a>
+    </div>
+    <div class="duo-media" style="max-width:320px;margin:0 auto"><img src="assets/koen.jpg" alt="Koen, founder, in front of solar panels" style="aspect-ratio:3/4;object-position:center top;filter:grayscale(1) contrast(1.06)"><div class="edge"></div></div>
   </div>
 </div></section>
 
@@ -368,7 +365,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   <div class="sec-head reveal"><div class="eyebrow">What clients say</div><h2>Trusted by neighbours, recommended by name.</h2></div>
   <div class="quotes reveal">
     <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Spotless install and the bill speaks for itself — down by two thirds. They explained everything and cleaned up like they were never here."</p><div class="who">Placeholder Name<span>Solar + battery &middot; Maarkedal</span></div></div>
-    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"The solar shutters changed how the house feels — quiet, cool in summer, and they close themselves at sunset. No cables, no mess."</p><div class="who">Placeholder Name<span>Somfy roller shutters &middot; Oudenaarde</span></div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"The solar shutters changed how the house feels — quiet, cool in summer, and they close themselves at sunset. No cables, no mess."</p><div class="who">Placeholder Name<span>Roller shutters &middot; Oudenaarde</span></div></div>
     <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"A proper family firm. Same faces start to finish, honest quote, and they still pick up the phone a year later."</p><div class="who">Placeholder Name<span>Solar + shutters &middot; Ronse</span></div></div>
   </div>
 </div></section>
@@ -417,10 +414,10 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     <div>
       <a class="brand" href="#top" style="margin-bottom:14px" aria-label="KDW home"><img class="brand-logo" src="assets/logo-kdw.png" alt="KDW"></a>
       <p class="muted">Family-run installers of premium solar panels and solar-powered automated roller shutters. Lower bills, smarter homes, workmanship you can see.</p>
-      <div class="badges"><span>Certified Installer</span><span>Somfy Expert</span><span>10-yr Warranty</span></div>
+      <div class="badges"><span>Certified Installer</span><span>Shutter Specialist</span><span>10-yr Warranty</span></div>
     </div>
-    <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#shutters">Roller shutters</a><a href="#shutters">Home automation</a></div>
-    <div><h4>Company</h4><a href="#why">Why us</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a href="#contact">Free quote</a></div>
+    <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#solar">Smart monitoring</a><a href="#why">Why us</a></div>
+    <div><h4>Company</h4><a href="#why">Why us</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Free quote</a></div>
     <div><h4>Get in touch</h4><a href="tel:+3255214864">+32 55 21 48 64</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">Mon–Fri 8:00–18:00</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">

@@ -1,0 +1,12 @@
+<!-- PROJECTS / GALLERY -->
+<section class="section" id="projects"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Recent Projects</div><h2>Installs we're proud to put our name on.</h2><p class="muted">Replace with real photos of your own jobs — that's what wins quotes.</p></div>
+  <div class="gallery reveal">
+    <a class="wide tall" href="#"><img src="assets/g-terrace.jpg" alt="Modern villa terrace with automated roller shutters"></a>
+    <a href="#"><img src="assets/gallery-shutters.jpg" alt="Residential automated roller shutter installation"></a>
+    <a href="#"><img src="assets/g-white.jpg" alt="White modern villa with roller shutters"></a>
+    <a class="wide" href="#"><img src="assets/g-blackfacade.jpg" alt="Black-facade home with automated shutters"></a>
+    <a href="#"><img src="assets/shutters-night.jpg" alt="Automated roller shutters on a modern home at night"></a>
+    <a href="#"><img src="assets/g-detail.jpg" alt="Close-up of an aluminium roller shutter"></a>
+  </div>
+</div></section>

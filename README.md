@@ -17,10 +17,10 @@ Open over http(s) (some browsers need it for fonts/JS):
 - **Language:** English — can be rebuilt in NL / FR
 
 ## Structure
-Hero → dual-service split → Solar Panels → Roller Shutters (Somfy-informed: solar-powered,
+Hero → dual-service split → Solar Panels → Roller Shutters (solar-powered,
 no wiring, app/voice control, weather-responsive) → Why Us (family) → Process → Projects
 gallery → Testimonials → CTA → Contact/quote → Footer.
 
 ## Notes
-- Roller-shutter content modelled on Somfy solar shutters (no cabling, 7-yr warranty, TaHoma app).
+- Roller-shutter content: solar-powered (no cabling, 7-yr warranty, app/voice control).
 - Scroll-reveal via IntersectionObserver; mobile nav + smooth scroll in inline JS.
