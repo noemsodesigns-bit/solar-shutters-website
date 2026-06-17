@@ -185,6 +185,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:34px;margin-bottom:40px}
 .footer h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.84rem;color:var(--silver-bright);margin-bottom:16px}
 .footer a{display:block;color:var(--steel);font-size:.94rem;margin-bottom:9px}
+.footer-grid > div:not(:first-child){padding-top:214px}
 .footer a:hover{color:var(--gold-bright)}
 .footer .muted{font-size:.92rem}
 .foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem;color:var(--steel-dim)}
@@ -207,6 +208,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
   .hero-badge{position:static;margin-top:30px;max-width:none}
   .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid > div:not(:first-child){padding-top:0}
   .field-row{grid-template-columns:1fr}
 }
 </style>
@@ -230,7 +232,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   <ul class="nav-links" id="menu">
     <li><a href="#solar">Solar Panels</a></li>
     <li><a href="shutters.html">Roller Shutters</a></li>
-    <li><a href="#why">Why Us</a></li>
+    <li><a href="why.html">Why Us</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -370,14 +372,6 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   </div>
 </div></section>
 
-<!-- CTA BAND -->
-<section class="cta-band"><div class="wrap">
-  <h2>Ready for lower bills and a smarter home?</h2>
-  <div class="hero-cta" style="margin:0">
-    <a class="btn btn-gold" href="#contact">Get a free quote</a>
-    <a class="btn btn-steel" href="tel:+3255214864">&#9742; +32 55 21 48 64</a>
-  </div>
-</div></section>
 
 <!-- CONTACT / QUOTE -->
 <section class="section" id="contact"><div class="wrap">
@@ -416,8 +410,8 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <p class="muted">Family-run installers of premium solar panels and solar-powered automated roller shutters. Lower bills, smarter homes, workmanship you can see.</p>
       <div class="badges"><span>Certified Installer</span><span>Shutter Specialist</span><span>10-yr Warranty</span></div>
     </div>
-    <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#solar">Smart monitoring</a><a href="#why">Why us</a></div>
-    <div><h4>Company</h4><a href="#why">Why us</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Free quote</a></div>
+    <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#solar">Smart monitoring</a><a href="why.html">Why us</a></div>
+    <div><h4>Company</h4><a href="why.html">Why us</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Free quote</a></div>
     <div><h4>Get in touch</h4><a href="tel:+3255214864">+32 55 21 48 64</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">Mon–Fri 8:00–18:00</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
