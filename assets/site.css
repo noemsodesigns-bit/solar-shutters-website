@@ -210,3 +210,20 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .field-row{grid-template-columns:1fr}
   .choices{grid-template-columns:1fr}
 }
+
+
+/* language switcher */
+.lang-switch{display:flex;align-items:center;gap:2px;border:1px solid var(--line-2);border-radius:3px;padding:3px;background:var(--black-2)}
+.lang-switch a{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border-radius:2px;font-family:var(--disp);font-weight:600;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);line-height:1;transition:.18s ease}
+.lang-switch a .fl{font-size:.95rem;line-height:1;filter:saturate(1.1)}
+.lang-switch a:hover{color:var(--silver-bright);background:var(--panel)}
+.lang-switch a[aria-current="true"]{background:var(--gold-grad);color:#1a1407}
+@media(max-width:900px){.lang-switch a .lb{display:none}.lang-switch a{padding:5px 7px}}
+
+/* --- intake forms (solar + shutters) --- */
+.intake .check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.92rem;line-height:1.45;cursor:pointer}
+.intake .check input{margin-top:3px;flex:none;width:16px;height:16px;accent-color:#e7c976;cursor:pointer}
+.intake select:invalid{color:#7d858f}
+.intake .formnote.ok{color:#8fd39a}
+.intake .formnote.err{color:#e88f8f}
+.intake button[disabled]{opacity:.6;cursor:progress}
