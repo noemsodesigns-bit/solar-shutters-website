@@ -34,7 +34,7 @@
   <ul class="nav-links" id="menu">
     <li><a href="solar.html">Panneaux solaires</a></li>
     <li><a href="shutters.html">Volets roulants</a></li>
-    <li><a href="why.html">Pourquoi nous</a></li>
+    <li><a href="why.html">Pourquoi KDW</a></li>
     <li><a href="projects.html">Réalisations</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -122,7 +122,7 @@
     <div>
       <div class="eyebrow">Pourquoi KDW</div>
       <h2>Entreprise familiale. Un travail <span class="gold">qui se voit.</span></h2>
-      <p class="lead">Deux générations, un seul standard. Nous sommes une petite équipe familiale qui vient quand elle l'a dit, garde le chantier propre et reste derrière chaque installation bien après le démontage de l'échafaudage.</p>
+      <p class="lead">Deux générations, le plus haut standard. Nous sommes une petite équipe familiale qui vient quand elle l'a dit, garde le chantier propre et reste derrière chaque installation bien après le démontage de l'échafaudage.</p>
       <ul class="checklist">
         <li><b>25+ ans de métier</b> — nous posons volets et protections solaires chaque semaine.</li>
         <li><b>Notre propre équipe agréée</b> — jamais sous-traitée au moins-disant.</li>
@@ -190,6 +190,12 @@
         <select name="timeline" required><option value="" disabled selected>Choisir…</option><option value="asap">Dès que possible</option><option value="1-3m">Dans 1 à 3 mois</option><option value="3-6m">Dans 3 à 6 mois</option><option value="exploring">Je me renseigne simplement</option></select>
       </div>
       <div class="field"><label>Autre chose à nous signaler ?</label><textarea name="message" rows="4" placeholder="Couleur envisagée, ouvertures difficiles, particularités…"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Date souhaitée pour la visite</label><input type="date" name="preferred_date" required></div>
+        <div class="field"><label>Moment souhaité</label><select name="preferred_time" required><option value="" disabled selected>Choisir…</option><option value="morning">Matin (8:00 – 12:00)</option><option value="afternoon">Après-midi (12:00 – 18:00)</option><option value="either">Les deux conviennent</option></select></div>
+      </div>
+      <div class="field"><label>Une seconde date qui vous conviendrait aussi</label><input type="date" name="alternate_date"></div>
+      <p class="bookingnote muted">Koen confirme le rendez-vous par téléphone — rien n'est fixé avant son appel.</p>
       <label class="check"><input type="checkbox" name="consent" value="yes" required><span>Vous pouvez conserver mes coordonnées afin que KDW me contacte au sujet de cette demande.</span></label>
       <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Je réserve ma visite technique</button>
       <p class="formnote muted" style="display:none;margin-top:14px;font-size:.9rem"></p>
@@ -206,7 +212,7 @@
       <div class="badges"><span>Spécialiste volets</span><span>Partenaire Roma</span><span>10 ans de garantie</span></div>
     </div>
     <div><h4>Volets roulants</h4><a href="shutters.html">Volets roulants</a><a href="shutters.html">Protection solaire</a><a href="shutters.html">Domotique</a><a href="solar.html">Panneaux solaires</a></div>
-    <div><h4>Entreprise</h4><a href="why.html">Pourquoi nous</a><a href="#contact">Contact</a><a href="#contact">Réservez une visite technique</a></div>
+    <div><h4>Entreprise</h4><a href="why.html">Pourquoi KDW</a><a href="#contact">Contact</a><a href="#contact">Réservez une visite technique</a></div>
     <div><h4>Nous contacter</h4><a href="tel:+3255214864">+32 55 21 48 64</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">Lun–ven 8:00–18:00</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
@@ -235,6 +241,13 @@ document.querySelectorAll('form.intake').forEach(function(f){
       .finally(function(){ note.style.display='block'; btn.disabled=false; btn.textContent=label; });
   });
 });
+</script>
+<script>
+(function(){
+  var d = new Date(); d.setDate(d.getDate() + 1);
+  var min = d.toISOString().split('T')[0];
+  document.querySelectorAll('form.intake input[type=date]').forEach(function(i){ i.min = min; });
+})();
 </script>
 </body>
 </html>

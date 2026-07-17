@@ -227,3 +227,8 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .intake .formnote.ok{color:#8fd39a}
 .intake .formnote.err{color:#e88f8f}
 .intake button[disabled]{opacity:.6;cursor:progress}
+
+/* --- inspection date picker --- */
+.intake input[type=date]{width:100%;color-scheme:dark}
+.intake input[type=date]:invalid{color:#7d858f}
+.intake .bookingnote{font-size:.85rem;margin:-2px 0 16px;line-height:1.45}

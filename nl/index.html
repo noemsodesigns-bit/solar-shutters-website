@@ -245,7 +245,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   <ul class="nav-links" id="menu">
     <li><a href="#solar">Zonnepanelen</a></li>
     <li><a href="shutters.html">Rolluiken</a></li>
-    <li><a href="why.html">Waarom wij</a></li>
+    <li><a href="why.html">Waarom KDW</a></li>
     <li><a href="projects.html">Realisaties</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -363,7 +363,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     <div>
       <div class="eyebrow">Waarom KDW</div>
       <h2>Familiebedrijf. Vakwerk <span class="gold">dat u ziet.</span></h2>
-      <p class="lead">Twee generaties, één standaard. Wij zijn een klein familieteam dat komt wanneer we het zeggen, de werf net houdt en achter elke plaatsing blijft staan, lang nadat de stelling weg is.</p>
+      <p class="lead">Twee generaties, hoogste standaard. Wij zijn een klein familieteam dat komt wanneer we het zeggen, de werf net houdt en achter elke plaatsing blijft staan, lang nadat de stelling weg is.</p>
       <ul class="checklist">
         <li><b>25+ jaar op de werf</b> — zonnepanelen en rolluiken, meer doen we niet.</li>
         <li><b>Onze eigen erkende ploeg</b> — nooit uitbesteed aan de goedkoopste.</li>
@@ -413,6 +413,12 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
         <select name="trade"><option value="solar">Zonnepanelen</option><option value="shutters">Automatische rolluiken</option><option value="both">Zowel zonnepanelen als rolluiken</option><option value="unsure">Nog niet zeker — adviseer mij</option></select>
       </div>
       <div class="field"><label>Vertel ons over uw woning</label><textarea name="message" rows="4" placeholder="Type dak, leeftijd van de woning, wat u wil bereiken…"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Voorkeursdatum voor het plaatsbezoek</label><input type="date" name="preferred_date" required></div>
+        <div class="field"><label>Voorkeursmoment</label><select name="preferred_time" required><option value="" disabled selected>Kies…</option><option value="morning">Voormiddag (8:00 – 12:00)</option><option value="afternoon">Namiddag (12:00 – 18:00)</option><option value="either">Beide gaat</option></select></div>
+      </div>
+      <div class="field"><label>Een tweede datum die u ook past</label><input type="date" name="alternate_date"></div>
+      <p class="bookingnote muted">Koen bevestigt de afspraak telefonisch — niets ligt vast tot hij belt.</p>
       <label class="check"><input type="checkbox" name="consent" value="yes" required><span>U mag mijn gegevens bewaren zodat KDW mij over deze aanvraag kan contacteren.</span></label>
       <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Boek mijn plaatsbezoek</button>
       <p class="formnote muted" style="display:none;margin-top:14px;font-size:.9rem"></p>
@@ -428,8 +434,8 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <p class="muted">Familiale installateurs van premium zonnepanelen en automatische rolluiken op zonne-energie. Lagere facturen, slimmere woningen, vakwerk dat u ziet.</p>
       <div class="badges"><span>Erkend installateur</span><span>Rolluikspecialist</span><span>10 jaar waarborg</span></div>
     </div>
-    <div><h4>Diensten</h4><a href="#solar">Zonnepanelen</a><a href="#solar">Batterijopslag</a><a href="#solar">Slimme monitoring</a><a href="why.html">Waarom wij</a></div>
-    <div><h4>Bedrijf</h4><a href="why.html">Waarom wij</a><a href="projects.html">Realisaties</a><a href="#contact">Contact</a><a href="#contact">Boek nu een plaatsbezoek</a></div>
+    <div><h4>Diensten</h4><a href="#solar">Zonnepanelen</a><a href="#solar">Batterijopslag</a><a href="#solar">Slimme monitoring</a><a href="why.html">Waarom KDW</a></div>
+    <div><h4>Bedrijf</h4><a href="why.html">Waarom KDW</a><a href="projects.html">Realisaties</a><a href="#contact">Contact</a><a href="#contact">Boek nu een plaatsbezoek</a></div>
     <div><h4>Contact</h4><a href="tel:+3255214864">+32 55 21 48 64</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">Ma–vr 8:00–18:00</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
@@ -476,6 +482,13 @@ document.querySelectorAll('form.intake').forEach(function(f){
       .finally(function(){ note.style.display='block'; btn.disabled=false; btn.textContent=label; });
   });
 });
+</script>
+<script>
+(function(){
+  var d = new Date(); d.setDate(d.getDate() + 1);
+  var min = d.toISOString().split('T')[0];
+  document.querySelectorAll('form.intake input[type=date]').forEach(function(i){ i.min = min; });
+})();
 </script>
 </body>
 </html>

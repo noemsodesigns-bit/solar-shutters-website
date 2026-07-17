@@ -244,7 +244,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   <ul class="nav-links" id="menu">
     <li><a href="#solar">Solar Panels</a></li>
     <li><a href="shutters.html">Roller Shutters</a></li>
-    <li><a href="why.html">Why Us</a></li>
+    <li><a href="why.html">Why KDW</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -362,7 +362,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     <div>
       <div class="eyebrow">Why KDW</div>
       <h2>Family-run. Workmanship <span class="gold">you can see.</span></h2>
-      <p class="lead">Two generations, one standard. We're a small family team that turns up when we say, keeps the site tidy, and stands behind every install long after the scaffolding comes down.</p>
+      <p class="lead">Two generations, the highest standard. We're a small family team that turns up when we say, keeps the site tidy, and stands behind every install long after the scaffolding comes down.</p>
       <ul class="checklist">
         <li><b>25+ years on the tools</b> — solar and shutters are all we do.</li>
         <li><b>Our own certified crew</b> — never subcontracted to the lowest bidder.</li>
@@ -412,6 +412,12 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
         <select name="trade"><option value="solar">Solar panels</option><option value="shutters">Automated roller shutters</option><option value="both">Both solar and shutters</option><option value="unsure">Not sure yet — advise me</option></select>
       </div>
       <div class="field"><label>Tell us about your home</label><textarea name="message" rows="4" placeholder="Roof type, age of home, what you'd like to achieve…"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Preferred date for the inspection</label><input type="date" name="preferred_date" required></div>
+        <div class="field"><label>Preferred time</label><select name="preferred_time" required><option value="" disabled selected>Select…</option><option value="morning">Morning (8:00 – 12:00)</option><option value="afternoon">Afternoon (12:00 – 18:00)</option><option value="either">Either works</option></select></div>
+      </div>
+      <div class="field"><label>A second date that would also suit you</label><input type="date" name="alternate_date"></div>
+      <p class="bookingnote muted">Koen confirms the appointment by phone — nothing is locked in until he calls.</p>
       <label class="check"><input type="checkbox" name="consent" value="yes" required><span>You may store my details so KDW can contact me about this request.</span></label>
       <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Book my site inspection</button>
       <p class="formnote muted" style="display:none;margin-top:14px;font-size:.9rem"></p>
@@ -427,8 +433,8 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <p class="muted">Family-run installers of premium solar panels and solar-powered automated roller shutters. Lower bills, smarter homes, workmanship you can see.</p>
       <div class="badges"><span>Certified Installer</span><span>Shutter Specialist</span><span>10-yr Warranty</span></div>
     </div>
-    <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#solar">Smart monitoring</a><a href="why.html">Why us</a></div>
-    <div><h4>Company</h4><a href="why.html">Why us</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Book a site inspection</a></div>
+    <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#solar">Smart monitoring</a><a href="why.html">Why KDW</a></div>
+    <div><h4>Company</h4><a href="why.html">Why KDW</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Book a site inspection</a></div>
     <div><h4>Get in touch</h4><a href="tel:+3255214864">+32 55 21 48 64</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">Mon–Fri 8:00–18:00</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
@@ -475,6 +481,13 @@ document.querySelectorAll('form.intake').forEach(function(f){
       .finally(function(){ note.style.display='block'; btn.disabled=false; btn.textContent=label; });
   });
 });
+</script>
+<script>
+(function(){
+  var d = new Date(); d.setDate(d.getDate() + 1);
+  var min = d.toISOString().split('T')[0];
+  document.querySelectorAll('form.intake input[type=date]').forEach(function(i){ i.min = min; });
+})();
 </script>
 </body>
 </html>

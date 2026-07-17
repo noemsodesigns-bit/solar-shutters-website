@@ -34,7 +34,7 @@
   <ul class="nav-links" id="menu">
     <li><a href="solar.html">Zonnepanelen</a></li>
     <li><a href="shutters.html">Rolluiken</a></li>
-    <li><a href="why.html">Waarom wij</a></li>
+    <li><a href="why.html">Waarom KDW</a></li>
     <li><a href="projects.html">Realisaties</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -119,7 +119,7 @@
     <div>
       <div class="eyebrow">Waarom KDW</div>
       <h2>Familiebedrijf. Vakwerk <span class="gold">dat u ziet.</span></h2>
-      <p class="lead">Twee generaties, één standaard. Wij zijn een klein familieteam dat komt wanneer we het zeggen, de werf net houdt en achter elke plaatsing blijft staan, lang nadat de stelling weg is.</p>
+      <p class="lead">Twee generaties, hoogste standaard. Wij zijn een klein familieteam dat komt wanneer we het zeggen, de werf net houdt en achter elke plaatsing blijft staan, lang nadat de stelling weg is.</p>
       <ul class="checklist">
         <li><b>25+ jaar op de werf</b> — zonnepanelen plaatsen we elke week.</li>
         <li><b>Onze eigen erkende ploeg</b> — nooit uitbesteed aan de goedkoopste.</li>
@@ -208,6 +208,12 @@
         <select name="timeline" required><option value="" disabled selected>Kies…</option><option value="asap">Zo snel mogelijk</option><option value="1-3m">Binnen 1–3 maanden</option><option value="3-6m">Binnen 3–6 maanden</option><option value="exploring">Ik oriënteer me nog</option></select>
       </div>
       <div class="field"><label>Nog iets dat we moeten weten?</label><textarea name="message" rows="4" placeholder="Leeftijd van de woning, wat u wil bereiken…"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Voorkeursdatum voor het plaatsbezoek</label><input type="date" name="preferred_date" required></div>
+        <div class="field"><label>Voorkeursmoment</label><select name="preferred_time" required><option value="" disabled selected>Kies…</option><option value="morning">Voormiddag (8:00 – 12:00)</option><option value="afternoon">Namiddag (12:00 – 18:00)</option><option value="either">Beide gaat</option></select></div>
+      </div>
+      <div class="field"><label>Een tweede datum die u ook past</label><input type="date" name="alternate_date"></div>
+      <p class="bookingnote muted">Koen bevestigt de afspraak telefonisch — niets ligt vast tot hij belt.</p>
       <label class="check"><input type="checkbox" name="consent" value="yes" required><span>U mag mijn gegevens bewaren zodat KDW mij over deze aanvraag kan contacteren.</span></label>
       <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Boek mijn plaatsbezoek</button>
       <p class="formnote muted" style="display:none;margin-top:14px;font-size:.9rem"></p>
@@ -224,7 +230,7 @@
       <div class="badges"><span>Erkend installateur</span><span>Bauer Solar</span><span>10 jaar waarborg</span></div>
     </div>
     <div><h4>Zonne-energie</h4><a href="solar.html">Zonnepanelen</a><a href="solar.html">Batterijopslag</a><a href="solar.html">Slimme monitoring</a><a href="shutters.html">Rolluiken</a></div>
-    <div><h4>Bedrijf</h4><a href="why.html">Waarom wij</a><a href="projects.html">Realisaties</a><a href="#contact">Contact</a><a href="#contact">Boek nu een plaatsbezoek</a></div>
+    <div><h4>Bedrijf</h4><a href="why.html">Waarom KDW</a><a href="projects.html">Realisaties</a><a href="#contact">Contact</a><a href="#contact">Boek nu een plaatsbezoek</a></div>
     <div><h4>Contact</h4><a href="tel:+3255214864">+32 55 21 48 64</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">Ma–vr 8:00–18:00</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
@@ -253,6 +259,13 @@ document.querySelectorAll('form.intake').forEach(function(f){
       .finally(function(){ note.style.display='block'; btn.disabled=false; btn.textContent=label; });
   });
 });
+</script>
+<script>
+(function(){
+  var d = new Date(); d.setDate(d.getDate() + 1);
+  var min = d.toISOString().split('T')[0];
+  document.querySelectorAll('form.intake input[type=date]').forEach(function(i){ i.min = min; });
+})();
 </script>
 </body>
 </html>
