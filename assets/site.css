@@ -232,3 +232,13 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .intake input[type=date]{width:100%;color-scheme:dark}
 .intake input[type=date]:invalid{color:#7d858f}
 .intake .bookingnote{font-size:.85rem;margin:-2px 0 16px;line-height:1.45}
+
+/* --- nav fit: FR labels are longest and were wrapping into the CTA --- */
+.nav-links a{white-space:nowrap}
+.nav-links{gap:24px}
+.nav-right .btn{white-space:nowrap}
+@media (max-width:1180px){
+  .nav-links{gap:16px}
+  .nav-links a{font-size:.78rem;letter-spacing:.06em}
+  .nav-right .btn{font-size:.78rem;padding-left:16px;padding-right:16px}
+}
