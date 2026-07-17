@@ -400,18 +400,22 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <div class="ci"><span class="ic">&#128205;</span><div><b>Adres</b><p>Keistraat 3, 9681 Maarkedal, België</p></div></div>
       <div class="ci"><span class="ic">&#128336;</span><div><b>Openingsuren</b><p>Ma–vr 8:00–18:00 &middot; za op afspraak</p></div></div>
     </div>
-    <form onsubmit="event.preventDefault();this.querySelector('.formnote').style.display='block';">
+    <form class="intake" action="https://formspree.io/f/mjgnykgk" method="POST" data-ep-solar="https://formspree.io/f/mjgnykgk" data-ep-shutters="https://formspree.io/f/mykrezkp" data-ok="Bedankt — uw aanvraag is goed aangekomen. We nemen snel contact op." data-err="Er ging iets mis bij het verzenden. Bel ons gerust op +32 55 21 48 64." data-sending="Verzenden…">
+      <input type="hidden" name="_subject" value="Nieuwe KDW aanvraag plaatsbezoek (NL)">
+      <input type="hidden" name="language" value="nl">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
       <div class="field-row">
-        <div class="field"><label>Naam</label><input type="text" placeholder="Uw naam" required></div>
-        <div class="field"><label>Telefoon</label><input type="tel" placeholder="Uw nummer"></div>
+        <div class="field"><label>Naam</label><input type="text" name="name" placeholder="Uw naam" required></div>
+        <div class="field"><label>Telefoon</label><input type="tel" name="phone" placeholder="Uw nummer"></div>
       </div>
-      <div class="field"><label>E-mail</label><input type="email" placeholder="u@email.com" required></div>
+      <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="u@email.com" required></div>
       <div class="field"><label>Ik heb interesse in</label>
-        <select><option>Zonnepanelen</option><option>Automatische rolluiken</option><option>Zowel zonnepanelen als rolluiken</option><option>Nog niet zeker — adviseer mij</option></select>
+        <select name="trade"><option value="solar">Zonnepanelen</option><option value="shutters">Automatische rolluiken</option><option value="both">Zowel zonnepanelen als rolluiken</option><option value="unsure">Nog niet zeker — adviseer mij</option></select>
       </div>
-      <div class="field"><label>Vertel ons over uw woning</label><textarea rows="4" placeholder="Type dak, leeftijd van de woning, wat u wil bereiken…"></textarea></div>
+      <div class="field"><label>Vertel ons over uw woning</label><textarea name="message" rows="4" placeholder="Type dak, leeftijd van de woning, wat u wil bereiken…"></textarea></div>
+      <label class="check"><input type="checkbox" name="consent" value="yes" required><span>U mag mijn gegevens bewaren zodat KDW mij over deze aanvraag kan contacteren.</span></label>
       <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Boek mijn plaatsbezoek</button>
-      <p class="formnote muted" style="display:none;margin-top:14px;font-size:.9rem">Bedankt — dit is een demoformulier. Koppel het aan e-mail/Formspree vóór livegang.</p>
+      <p class="formnote muted" style="display:none;margin-top:14px;font-size:.9rem"></p>
     </form>
   </div>
 </div></section>
@@ -447,5 +451,31 @@ const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.ta
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 <script>try{localStorage.setItem("kdw-lang","nl")}catch(e){}</script>
+<script>
+document.querySelectorAll('form.intake').forEach(function(f){
+  var sel = f.querySelector('select[name=trade]');
+  function route(){
+    if (!sel) return;
+    var v = sel.value;
+    f.action = (v === 'shutters') ? f.dataset.epShutters : f.dataset.epSolar;
+  }
+  if (sel) { sel.addEventListener('change', route); route(); }
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var note = f.querySelector('.formnote');
+    var btn  = f.querySelector('button[type=submit]');
+    var label = btn.textContent;
+    btn.disabled = true; btn.textContent = f.dataset.sending;
+    note.style.display = 'none'; note.className = 'formnote muted';
+    fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if (r.ok) { note.textContent = f.dataset.ok; note.classList.add('ok'); f.reset(); route(); }
+        else { note.textContent = f.dataset.err; note.classList.add('err'); }
+      })
+      .catch(function(){ note.textContent = f.dataset.err; note.classList.add('err'); })
+      .finally(function(){ note.style.display='block'; btn.disabled=false; btn.textContent=label; });
+  });
+});
+</script>
 </body>
 </html>
