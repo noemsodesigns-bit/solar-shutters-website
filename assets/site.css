@@ -264,3 +264,46 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .tl-item,.tl-item:nth-child(odd),.tl-item:nth-child(even){width:100%;margin-left:0;padding:0 0 32px 26px;text-align:left}
   .tl-item::before,.tl-item:nth-child(odd)::before,.tl-item:nth-child(even)::before{left:-5px;right:auto}
 }
+
+/* ---------- nav dropdowns + FAQ accordion + placeholder chips ---------- */
+.nav-links li.hasdrop{position:relative}
+.nav-links li.hasdrop > a:after{content:" \25BE";color:var(--gold);font-size:.7em;margin-left:3px}
+.nav-links .drop{position:absolute;top:100%;left:-14px;display:none;background:var(--panel);border:1px solid var(--line-2);border-radius:6px;padding:10px;min-width:290px;box-shadow:0 18px 44px rgba(0,0,0,.55);z-index:60;list-style:none}
+.nav-links li.hasdrop:hover .drop,.nav-links li.hasdrop:focus-within .drop{display:block}
+.nav-links .drop li{margin:0}
+.nav-links .drop a{display:block;padding:9px 12px;border-radius:4px;font-family:var(--body);font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--silver)}
+.nav-links .drop a:hover{background:var(--panel-2);color:var(--gold-bright)}
+.nav-links .drop a .s{display:block;font-size:.76rem;color:var(--steel-dim)}
+.nav-links .drop .sep{height:1px;background:var(--line-2);margin:8px 4px}
+@media(max-width:900px){
+  .nav-links .drop{display:block;position:static;background:none;border:0;box-shadow:none;padding:4px 0 8px 14px;min-width:0}
+  .nav-links li.hasdrop > a:after{content:""}
+  .nav-links .drop a{padding:6px 0}
+  .nav-links .drop a .s{display:none}
+}
+
+.faq-item{border-bottom:1px solid var(--line-2)}
+.faq-item summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font-family:var(--disp);font-weight:500;font-size:1.02rem;letter-spacing:.02em;color:var(--silver-bright);position:relative}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:after{content:"+";position:absolute;right:6px;top:16px;color:var(--gold);font-size:1.3rem;line-height:1}
+.faq-item[open] summary:after{content:"\2013"}
+.faq-item summary:hover{color:var(--gold-bright)}
+.faq-a{padding:0 0 20px}
+.faq-a p{color:var(--silver);margin:0}
+.tbc{display:inline-block;font-family:var(--disp);font-size:.72rem;letter-spacing:.1em;color:var(--gold);border:1px solid rgba(205,164,52,.45);border-radius:99px;padding:1px 9px;vertical-align:baseline}
+
+/* keep the wider menu on one line */
+.nav-links li{white-space:nowrap}
+@media(min-width:901px) and (max-width:1500px){
+  .nav-links{gap:18px}
+  .nav-links > li > a{font-size:.78rem;letter-spacing:.06em}
+  .nav-right .btn-gold{padding:11px 14px;font-size:.72rem;letter-spacing:.06em}
+  .nav-inner{gap:14px}
+}
+@media(min-width:901px) and (max-width:1200px){
+  .nav-links{gap:13px}
+  .nav-links > li > a{font-size:.72rem;letter-spacing:.03em}
+}
+
+.faq-a p{margin:0 0 14px}
+.faq-a p:last-child{margin-bottom:0}

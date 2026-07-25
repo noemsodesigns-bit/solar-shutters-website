@@ -2,3 +2,5 @@
 .vercel
 node_modules
 *.bak
+assets/_originals/
+_removed/

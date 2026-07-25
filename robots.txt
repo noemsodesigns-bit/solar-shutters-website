@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# AI answer engines - explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Stale pre-translation pages - not part of the live site
+Disallow: /solar.html
+Disallow: /why.html
+Disallow: /projects.html
+Disallow: /shutters.html
+
+Sitemap: https://solar-shutters-website.vercel.app/sitemap.xml
