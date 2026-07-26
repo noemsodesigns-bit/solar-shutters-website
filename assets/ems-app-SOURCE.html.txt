@@ -1,0 +1,119 @@
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Barlow:wght@400;500;600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:transparent}
+  #stage{position:relative;width:1560px;height:1020px}
+  .ph{position:absolute;width:330px;height:590px;border-radius:40px;
+      background:#14171c;border:1px solid #2b3038;overflow:hidden;
+      box-shadow:0 50px 90px -30px rgba(0,0,0,.85), 0 0 0 9px #0d0f13, 0 0 0 10px #333944;
+      font-family:Barlow,sans-serif;color:#c9ced8}
+  .bar{background:linear-gradient(135deg,#e7c976,#cda434 55%,#a07f1f);
+       height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:#1a1407}
+  .bar .brand{font-family:Oswald;font-weight:700;letter-spacing:.22em;font-size:15px}
+  .bar .ico{display:flex;gap:10px;font-size:13px;opacity:.85}
+  .body{padding:16px 16px 0}
+  .lbl{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8d95a3;margin-bottom:9px}
+  .sel{border:1px solid #2b3038;border-radius:5px;padding:8px 11px;font-size:12.5px;color:#dfe4ec;
+       display:flex;justify-content:space-between;align-items:center;background:#191d24;margin-bottom:14px}
+  h4{font-family:Oswald;font-weight:500;font-size:22px;color:#f0f3f8;line-height:1.15;margin-bottom:12px;letter-spacing:.3px}
+  p.t{font-size:12.5px;line-height:1.65;color:#98a0ae;margin-bottom:12px}
+  .gold{color:#e7c976}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:10px;font-size:9.5px;color:#8d95a3}
+  .legend i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px}
+  .row{display:flex;align-items:center;justify-content:space-between;border:1px solid #262b33;
+       border-radius:6px;padding:12px 13px;margin-bottom:9px;background:#191d24}
+  .row .k{display:flex;align-items:center;gap:9px;font-size:13px;color:#dfe4ec}
+  .row .v{font-family:Oswald;font-weight:500;font-size:15px;color:#e7c976}
+  .chip{width:26px;height:26px;border-radius:5px;background:rgba(205,164,52,.13);
+        border:1px solid rgba(205,164,52,.32);display:grid;place-items:center;font-size:12px}
+  .stamp{font-size:10.5px;color:#7c8492;margin-bottom:4px}
+  .foot{position:absolute;left:16px;right:16px;bottom:18px;border-top:1px solid #262b33;padding-top:12px;
+        font-size:11.5px;color:#8d95a3;display:flex;justify-content:space-between}
+</style>
+
+<div id="stage">
+
+  <!-- 1: production -->
+  <div class="ph" style="left:70px;  top:110px; transform:rotate(-9deg) scale(.94)">
+    <div class="bar"><span class="brand">ADW</span><span class="ico">&#9788; &#9881; &#9776;</span></div>
+    <div class="body">
+      <div class="lbl">Opgewekte energie (kWh)</div>
+      <div class="sel"><span>Vandaag &middot; 12 juni</span><span class="gold">&#9662;</span></div>
+      <svg viewBox="0 0 290 200" width="100%" height="205">
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#cda434" stop-opacity=".45"/><stop offset="100%" stop-color="#cda434" stop-opacity="0"/></linearGradient></defs>
+        <g stroke="#242932" stroke-width="1">
+          <line x1="0" y1="30" x2="290" y2="30"/><line x1="0" y1="70" x2="290" y2="70"/>
+          <line x1="0" y1="110" x2="290" y2="110"/><line x1="0" y1="150" x2="290" y2="150"/><line x1="0" y1="190" x2="290" y2="190"/>
+        </g>
+        <path d="M8,190 L30,188 L52,170 L70,150 L88,96 L104,74 L120,66 L134,42 L150,52 L166,34 L182,40 L198,62 L214,58 L232,92 L250,132 L266,168 L282,188 L282,196 L8,196 Z" fill="url(#g1)"/>
+        <polyline points="8,190 30,188 52,170 70,150 88,96 104,74 120,66 134,42 150,52 166,34 182,40 198,62 214,58 232,92 250,132 266,168 282,188"
+          fill="none" stroke="#e7c976" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <div class="legend"><span><i style="background:#e7c976"></i>Productie</span><span><i style="background:#57606f"></i>Vorige dag</span></div>
+    </div>
+    <div class="foot"><span>Totaal vandaag</span><span class="gold">28,4 kWh</span></div>
+  </div>
+
+  <!-- 2: day ahead -->
+  <div class="ph" style="left:380px; top:55px; transform:rotate(-5.5deg) scale(.97)">
+    <div class="bar"><span class="brand">ADW</span><span class="ico">&#9788; &#9881; &#9776;</span></div>
+    <div class="body">
+      <div class="stamp">Dynamisch tarief &middot; 12-06</div>
+      <h4>Day-ahead<br>energieprijs</h4>
+      <p class="t">Uw installatie koopt bij wanneer de beursprijs laag staat en leeft van de batterij wanneer stroom duur is.</p>
+      <div class="lbl">Prijs per kWh</div>
+      <svg viewBox="0 0 290 150" width="100%" height="150">
+        <g stroke="#242932" stroke-width="1"><line x1="0" y1="30" x2="290" y2="30"/><line x1="0" y1="70" x2="290" y2="70"/><line x1="0" y1="110" x2="290" y2="110"/></g>
+        <line x1="0" y1="112" x2="290" y2="112" stroke="#3a4150" stroke-dasharray="3 4"/>
+        <polyline points="8,104 30,110 52,118 74,120 96,100 118,58 140,30 160,48 180,86 202,112 224,118 246,96 268,60 282,44"
+          fill="none" stroke="#7fb2ff" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="140" cy="30" r="4" fill="#e7c976"/><circle cx="224" cy="118" r="4" fill="#6fcf97"/>
+      </svg>
+      <div class="legend"><span><i style="background:#6fcf97"></i>Goedkoop &mdash; batterij laadt</span><span><i style="background:#e7c976"></i>Duur &mdash; batterij levert</span></div>
+    </div>
+    <div class="foot"><span>Laagste vandaag</span><span class="gold">0,041 &euro;/kWh</span></div>
+  </div>
+
+  <!-- 3: flows -->
+  <div class="ph" style="left:695px; top:130px; transform:rotate(-3deg) scale(1)">
+    <div class="bar"><span class="brand">ADW</span><span class="ico">&#9788; &#9881; &#9776;</span></div>
+    <div class="body">
+      <div class="lbl">Energiestromen (kW)</div>
+      <div class="sel"><span>Week 24</span><span class="gold">&#9662;</span></div>
+      <svg viewBox="0 0 290 230" width="100%" height="235">
+        <g stroke="#242932" stroke-width="1"><line x1="0" y1="40" x2="290" y2="40"/><line x1="0" y1="90" x2="290" y2="90"/><line x1="0" y1="140" x2="290" y2="140"/><line x1="0" y1="190" x2="290" y2="190"/></g>
+        <g>
+          <rect x="14" y="150" width="9" height="60" fill="#e7c976" rx="1.5"/><rect x="26" y="176" width="9" height="34" fill="#6fcf97" rx="1.5"/>
+          <rect x="52" y="120" width="9" height="90" fill="#e7c976" rx="1.5"/><rect x="64" y="162" width="9" height="48" fill="#6fcf97" rx="1.5"/>
+          <rect x="90" y="86"  width="9" height="124" fill="#e7c976" rx="1.5"/><rect x="102" y="146" width="9" height="64" fill="#6fcf97" rx="1.5"/>
+          <rect x="128" y="62" width="9" height="148" fill="#e7c976" rx="1.5"/><rect x="140" y="132" width="9" height="78" fill="#6fcf97" rx="1.5"/>
+          <rect x="166" y="98" width="9" height="112" fill="#e7c976" rx="1.5"/><rect x="178" y="158" width="9" height="52" fill="#6fcf97" rx="1.5"/>
+          <rect x="204" y="74" width="9" height="136" fill="#e7c976" rx="1.5"/><rect x="216" y="140" width="9" height="70" fill="#6fcf97" rx="1.5"/>
+          <rect x="242" y="112" width="9" height="98" fill="#e7c976" rx="1.5"/><rect x="254" y="168" width="9" height="42" fill="#6fcf97" rx="1.5"/>
+        </g>
+        <polyline points="18,196 56,182 94,150 132,128 170,158 208,140 246,170" fill="none" stroke="#7fb2ff" stroke-width="2" stroke-dasharray="4 3"/>
+      </svg>
+      <div class="legend"><span><i style="background:#e7c976"></i>Eigen productie</span><span><i style="background:#6fcf97"></i>Zelfverbruik</span><span><i style="background:#7fb2ff"></i>Afname net</span></div>
+    </div>
+    <div class="foot"><span>Zelfverbruik</span><span class="gold">71%</span></div>
+  </div>
+
+  <!-- 4: live -->
+  <div class="ph" style="left:1015px; top:250px; transform:rotate(2deg) scale(1.04)">
+    <div class="bar"><span class="brand">ADW</span><span class="ico">&#9788; &#9881; &#9776;</span></div>
+    <div class="body">
+      <div class="stamp">Laatste update &middot; 13:00</div>
+      <h4>Momentopnames</h4>
+      <div class="row"><span class="k"><span class="chip">&#8646;</span>Net</span><span class="v">0 W</span></div>
+      <div class="row"><span class="k"><span class="chip">&#9211;</span>Batterij</span><span class="v">78% &middot; 260 W</span></div>
+      <div class="row"><span class="k"><span class="chip">&#8962;</span>Verbruik</span><span class="v">410 W</span></div>
+      <div class="row"><span class="k"><span class="chip">&#9788;</span>Zonnepanelen</span><span class="v">670 W</span></div>
+      <div class="row" style="border-color:#3a3320;background:rgba(205,164,52,.07)">
+        <span class="k"><span class="chip">&#128176;</span>Bespaard vandaag</span><span class="v">&euro; 6,12</span></div>
+    </div>
+    <div class="foot"><span>Historische gegevens</span><span class="gold">&#8250;</span></div>
+  </div>
+
+</div>
