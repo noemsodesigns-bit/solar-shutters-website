@@ -88,7 +88,7 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 .footer .brand-logo{height:200px}
 @media(max-width:640px){.brand-logo{height:64px}}
 .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
-.nav-links a{font-family:var(--disp);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:.86rem;color:var(--silver)}
+.nav-links a{font-family:var(--disp);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:.95rem;color:var(--silver)}
 .nav-links a:hover{color:var(--gold-bright)}
 .nav-right{display:flex;align-items:center;gap:18px}
 .nav-toggle{display:none;background:none;border:0;color:var(--silver-bright);font-size:1.6rem;cursor:pointer}
@@ -271,13 +271,13 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .nav-links li{white-space:nowrap}
 @media(min-width:901px) and (max-width:1560px){
   .nav-links{gap:20px}
-  .nav-links > li > a{font-size:.86rem;letter-spacing:.07em}
+  .nav-links > li > a{font-size:.94rem;letter-spacing:.07em}
   .nav-right .btn-gold{padding:12px 16px;font-size:.8rem;letter-spacing:.07em}
   .nav-inner{gap:16px}
 }
 @media(min-width:901px) and (max-width:1280px){
   .nav-links{gap:15px}
-  .nav-links > li > a{font-size:.82rem;letter-spacing:.04em}
+  .nav-links > li > a{font-size:.89rem;letter-spacing:.04em}
   .nav-right .btn-gold{padding:11px 13px;font-size:.76rem}
 }
 .nav-links .drop a{font-size:.95rem}
@@ -286,6 +286,25 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
 .faq-a p{margin:0 0 14px}
 .faq-a p:last-child{margin-bottom:0}
+
+/* nav: leesbaarder lettertype, maar op één lijn houden (FR labels zijn het langst) */
+.nav-links li{white-space:nowrap}
+@media(min-width:901px) and (max-width:1560px){
+  .nav-links{gap:20px}
+  .nav .nav-links > li > a{font-size:.94rem;letter-spacing:.07em}
+  .nav-right .btn-gold{padding:12px 16px;font-size:.8rem;letter-spacing:.07em}
+  .nav-inner{gap:16px}
+}
+@media(min-width:901px) and (max-width:1280px){
+  .nav-links{gap:15px}
+  .nav .nav-links > li > a{font-size:.89rem;letter-spacing:.04em}
+  .nav-right .btn-gold{padding:11px 13px;font-size:.76rem}
+}
+@media(min-width:901px) and (max-width:1120px){
+  .nav-links{gap:11px}
+  .nav .nav-links > li > a{font-size:.83rem;letter-spacing:.02em}
+  .nav-right .btn-gold{padding:10px 11px;font-size:.72rem}
+}
 </style>
 <script type="application/ld+json">
 {
