@@ -294,16 +294,41 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
 /* keep the wider menu on one line */
 .nav-links li{white-space:nowrap}
-@media(min-width:901px) and (max-width:1500px){
-  .nav-links{gap:18px}
-  .nav-links > li > a{font-size:.78rem;letter-spacing:.06em}
-  .nav-right .btn-gold{padding:11px 14px;font-size:.72rem;letter-spacing:.06em}
-  .nav-inner{gap:14px}
+@media(min-width:901px) and (max-width:1560px){
+  .nav-links{gap:20px}
+  .nav-links > li > a{font-size:.86rem;letter-spacing:.07em}
+  .nav-right .btn-gold{padding:12px 16px;font-size:.8rem;letter-spacing:.07em}
+  .nav-inner{gap:16px}
 }
-@media(min-width:901px) and (max-width:1200px){
-  .nav-links{gap:13px}
-  .nav-links > li > a{font-size:.72rem;letter-spacing:.03em}
+@media(min-width:901px) and (max-width:1280px){
+  .nav-links{gap:15px}
+  .nav-links > li > a{font-size:.82rem;letter-spacing:.04em}
+  .nav-right .btn-gold{padding:11px 13px;font-size:.76rem}
+}
+.nav-links .drop a{font-size:.95rem}
+.nav-links .drop a .s{font-size:.82rem}
 }
 
 .faq-a p{margin:0 0 14px}
 .faq-a p:last-child{margin-bottom:0}
+
+/* --- Answer-first block + educational prose + plain comparison table (service pages) --- */
+.kort{border-left:3px solid var(--gold);background:rgba(205,164,52,.05);padding:20px 24px;margin:26px 0 0;border-radius:0 6px 6px 0}
+.kort .kl{font-family:var(--disp);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--gold);margin:0 0 8px}
+.kort p{color:var(--silver-bright);margin:0 0 12px}
+.kort p:last-child{margin-bottom:0}
+.prose{max-width:820px}
+.prose h2{font-size:clamp(1.28rem,2vw,1.72rem);margin:44px 0 14px;text-transform:none;letter-spacing:.3px}
+.prose h2:first-child{margin-top:0}
+.prose p{color:var(--silver);margin:0 0 15px}
+.prose p:last-child{margin-bottom:0}
+.prose a{color:var(--gold-bright);text-decoration:underline;text-underline-offset:3px}
+.prose a:hover{color:var(--gold)}
+.ptab-wrap{overflow-x:auto;margin:26px 0 6px;-webkit-overflow-scrolling:touch}
+.ptab{width:100%;border-collapse:collapse;font-size:.97rem;min-width:520px}
+.ptab caption{text-align:left;font-family:var(--disp);text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;color:var(--steel);padding-bottom:12px}
+.ptab th,.ptab td{text-align:left;padding:14px 18px 14px 0;border-bottom:1px solid var(--line-2);vertical-align:top}
+.ptab thead th{font-family:var(--disp);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;color:var(--gold);border-bottom-color:rgba(205,164,52,.35)}
+.ptab tbody th{font-weight:600;color:var(--silver-bright);width:38%;padding-right:26px}
+.ptab tbody td{color:var(--silver)}
+.ptab tbody tr:last-child th,.ptab tbody tr:last-child td{border-bottom:none}
