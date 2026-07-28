@@ -69,8 +69,8 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 .preview-banner{background:var(--gold-grad);color:#1a1407;text-align:center;font-family:var(--disp);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem;padding:7px 16px}
 
 /* Top utility bar */
-.topbar{background:var(--black);border-bottom:1px solid var(--line);font-size:.82rem;color:var(--steel)}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;flex-wrap:wrap;gap:6px}
+.topbar{background:var(--black);border-bottom:1px solid var(--line);font-size:.95rem;color:var(--steel)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:46px;flex-wrap:wrap;gap:6px}
 .topbar a{color:var(--silver)}.topbar a:hover{color:var(--gold-bright)}
 .topbar .tb-r{display:flex;gap:22px;align-items:center}
 .topbar .dot{color:var(--gold)}
@@ -256,6 +256,22 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .nav .nav-links > li > a{font-size:.87rem;letter-spacing:.01em}
   .nav-right .btn-gold{padding:10px 11px;font-size:.72rem}
 }
+
+.nav-links li.hasdrop{position:relative}
+.nav-links li.hasdrop > a:after{content:" \25BE";color:var(--gold);font-size:.7em;margin-left:3px}
+.nav-links .drop{position:absolute;top:100%;left:-14px;display:none;background:var(--panel);border:1px solid var(--line-2);border-radius:6px;padding:10px;min-width:290px;box-shadow:0 18px 44px rgba(0,0,0,.55);z-index:60;list-style:none}
+.nav-links li.hasdrop:hover .drop,.nav-links li.hasdrop:focus-within .drop{display:block}
+.nav-links .drop li{margin:0}
+.nav-links .drop a{display:block;padding:9px 12px;border-radius:4px;font-family:var(--body);font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--silver)}
+.nav-links .drop a:hover{background:var(--panel-2);color:var(--gold-bright)}
+.nav-links .drop a .s{display:block;font-size:.76rem;color:var(--steel-dim)}
+.nav-links .drop .sep{height:1px;background:var(--line-2);margin:8px 4px}
+@media(max-width:1040px){
+  .nav-links .drop{display:block;position:static;background:none;border:0;box-shadow:none;padding:4px 0 8px 14px;min-width:0}
+  .nav-links li.hasdrop > a:after{content:""}
+  .nav-links .drop a{padding:6px 0}
+  .nav-links .drop a .s{display:none}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -324,7 +340,26 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 <header class="nav" id="nav"><div class="wrap nav-inner">
   <a class="brand" href="#top" aria-label="ADW home"><img class="brand-logo" src="../assets/logo-kdw.png" alt="ADW" width="564" height="544"></a>
   <ul class="nav-links" id="menu">
-    <li><a href="#solar">Solar Panels</a></li>
+    <li class="hasdrop"><a href="#solar">Services</a>
+      <ul class="drop">
+        <li><a href="zonnepanelen.html">Solar panels<span class="s">Bauer glass-glass modules</span></a></li>
+        <li><a href="thuisbatterijen.html">Home batteries<span class="s">EASYWAY &mdash; storage for the evening</span></a></li>
+        <li class="sep"></li>
+        <li><a href="omvormers.html">Inverters<span class="s">Deye hybrid inverters</span></a></li>
+        <li><a href="laadpalen.html">Charge points<span class="s">MENNEKES AMTRON 4You</span></a></li>
+        <li><a href="energiebeheer.html">Energy management (EMS)<span class="s">Our own software</span></a></li>
+      </ul>
+    </li>
+    <li class="hasdrop"><a href="faq.html">Energy explained</a>
+      <ul class="drop">
+        <li><a href="faq.html">Frequently asked questions<span class="s">24 questions, answered</span></a></li>
+        <li class="sep"></li>
+        <li><a href="terugverdientijd.html">Payback time in 2026<span class="s">What has changed</span></a></li>
+        <li><a href="capaciteitstarief.html">The capacity tariff explained<span class="s">Your peak counts for more than your usage</span></a></li>
+        <li><a href="batterijgrootte.html">What size battery?<span class="s">Working from your evening use</span></a></li>
+        <li><a href="premies-btw.html">Grants and VAT in 2026<span class="s">What still exists</span></a></li>
+      </ul>
+    </li>
     <li><a href="why.html">Why ADW</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -566,11 +601,11 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <div class="badges"><span>Certified Installer</span><span>10-yr Warranty</span></div>
     </div>
     <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#solar">Smart monitoring</a><a href="why.html">Why ADW</a></div>
-    <div><h4>Company</h4><a href="why.html">Why ADW</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Book a site inspection</a></div>
+    <div><h4>Company</h4><a href="why.html">Why ADW</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Book a site inspection</a><a href="privacy.html">Privacy statement</a></div>
     <div><h4>Get in touch</h4><a href="tel:+32495303899">+32 495 30 38 99</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">By appointment only</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026 ADW (placeholder). All rights reserved.</span>
+    <span>© 2026 ADW (placeholder). All rights reserved. <a href="privacy.html">Privacy statement</a></span>
     <span>Design preview by Noemsø Designs — Business</span>
   </div>
 </div></footer>
