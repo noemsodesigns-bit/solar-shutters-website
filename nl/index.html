@@ -95,9 +95,11 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 
 /* Hero */
 .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+.hero .wrap{text-shadow:0 2px 18px rgba(20,23,28,.75),0 0 4px rgba(20,23,28,.5)}
+.hero .eyebrow{text-shadow:0 1px 2px rgba(20,23,28,.95),0 0 10px rgba(20,23,28,.85),0 0 22px rgba(20,23,28,.7)}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,28,.82) 0%,rgba(20,23,28,.55) 42%,rgba(20,23,28,.15) 100%),linear-gradient(0deg,rgba(20,23,28,.7),transparent 45%)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:brightness(1.12) saturate(1.04)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,28,.34) 0%,rgba(20,23,28,.12) 45%,rgba(20,23,28,0) 100%),linear-gradient(0deg,rgba(20,23,28,.22),transparent 34%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-top:60px;padding-bottom:60px}
 .hero h1{margin:18px 0 22px}
 .hero h1 span{display:block}
@@ -166,7 +168,7 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 /* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px}
 .gallery a{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:4px}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:.5s ease;filter:grayscale(.15)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
 .gallery a:hover img{transform:scale(1.07);filter:grayscale(0)}
 .gallery .tall{grid-row:span 2}.gallery .wide{grid-column:span 2}
 .gallery a::after{content:"";position:absolute;inset:0;border:1px solid rgba(205,164,52,0);transition:.3s}
@@ -174,6 +176,8 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 
 /* Testimonials */
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quotes.quotes-duo{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto}
+.quotes.quotes-solo{grid-template-columns:1fr;max-width:640px;margin:0 auto}
 .quote{background:var(--metal);border:1px solid var(--line);border-radius:4px;padding:30px 28px;border-top:2px solid var(--gold)}
 .quote .stars{color:var(--gold-bright);letter-spacing:3px;margin-bottom:14px;font-size:.95rem}
 .quote p{color:var(--silver);font-style:italic;margin-bottom:18px}
@@ -200,16 +204,17 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
 /* Footer */
-.footer{background:var(--black);border-top:1px solid var(--line);padding:64px 0 30px}
+.footer{background:linear-gradient(180deg,#d6dade 0%,#bcc2c9 46%,#a0a6af 100%);border-top:1px solid #eef1f5;box-shadow:inset 0 1px 0 #f4f7fa;padding:64px 0 30px;color:#3a4047}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:34px;margin-bottom:40px}
-.footer h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.84rem;color:var(--silver-bright);margin-bottom:16px}
-.footer a{display:block;color:var(--steel);font-size:.94rem;margin-bottom:9px}
+.footer h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.84rem;color:#1b1f25;margin-bottom:16px}
+.footer a{display:block;color:#3a4047;font-size:.94rem;margin-bottom:9px}
 .footer-grid > div:not(:first-child){padding-top:214px}
-.footer a:hover{color:var(--gold-bright)}
-.footer .muted{font-size:.92rem}
-.foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem;color:var(--steel-dim)}
+.footer a:hover{color:var(--gold-deep)}
+.footer .muted{font-size:.92rem;color:#4d535c}
+.foot-bottom{border-top:1px solid rgba(20,24,30,.18);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem;color:#565c66}
+.foot-legal{flex:1 1 auto;text-align:center}
 .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.badges span{font-family:var(--disp);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);border:1px solid var(--line-2);border-radius:3px;padding:5px 9px}
+.badges span{font-family:var(--disp);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#41474f;border:1px solid rgba(20,24,30,.22);border-radius:3px;padding:5px 9px}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
@@ -326,7 +331,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   "image": "https://solar-shutters-website.vercel.app/assets/hero.jpg",
   "logo": "https://solar-shutters-website.vercel.app/assets/logo-kdw.png",
   "description": "Familiaal installateur van premium zonnepanelen, slimme batterijen, omvormers en laadpalen in de Vlaamse Ardennen.",
-  "email": "info@alu-dewolf.be",
+  "email": "koen.dewolf@alu-dewolf.be",
   "telephone": "+32495303899",
   "address": {
     "@type": "PostalAddress",
@@ -375,7 +380,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   <div class="tb-l">Familiebedrijf sinds 1971 &nbsp;<span class="dot">&bull;</span>&nbsp; Erkende installateurs van zonnepanelen &nbsp;<span class="dot">&bull;</span>&nbsp; BTW BE 0457.079.539</div>
   <div class="tb-r">
     <a href="tel:+32495303899">&#9742; +32 495 30 38 99</a>
-    <a href="mailto:info@alu-dewolf.be">&#9993; info@alu-dewolf.be</a>
+    <a href="mailto:koen.dewolf@alu-dewolf.be">&#9993; koen.dewolf@alu-dewolf.be</a>
   </div>
 </div></div>
 
@@ -438,18 +443,6 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   </div>
 </section>
 
-<!-- DUAL SERVICE SPLIT -->
-<section class="split-services" style="grid-template-columns:1fr">
-  <div class="svc">
-    <img src="../assets/solar-rooftop.jpg" alt="Strakke zwarte zonnepanelen op het dak van een moderne woning" width="1600" height="893" loading="lazy" decoding="async">
-    <div class="svc-body">
-      <div class="eyebrow">Dienst 01</div>
-      <h3>Zonnepanelen</h3>
-      <p>Tier-1 panelen, slimme omvormers en optionele batterijopslag — ontworpen op maat van uw dak en uw factuur.</p>
-      <a class="svc-link" href="#solar">Ontdek zonnepanelen</a>
-    </div>
-  </div>
-</section>
 
 <!-- SOLAR SECTION -->
 <section class="section" id="solar"><div class="wrap">
@@ -595,10 +588,11 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 <!-- TESTIMONIALS -->
 <section class="section"><div class="wrap">
   <div class="sec-head reveal"><div class="eyebrow">Wat klanten zeggen</div><h2>Vertrouwd door buren, aanbevolen bij naam.</h2></div>
-  <div class="quotes reveal">
-    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Onberispelijke plaatsing en de factuur spreekt voor zich — een derde van wat het was. Ze legden alles uit en ruimden op alsof ze er nooit geweest waren."</p><div class="who">Voorlopige naam<span>Zonnepanelen + batterij &middot; Maarkedal</span></div></div>
-    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"[Referentie volgt] Nette plaatsing en de opbrengst spreekt voor zich — precies wat er beloofd was."</p><div class="who">Voorlopige naam<span>Zonnepanelen &middot; Oudenaarde</span></div></div>
-    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Een echt familiebedrijf. Dezelfde gezichten van begin tot eind, een eerlijke offerte, en een jaar later nemen ze nog steeds op."</p><div class="who">Voorlopige naam<span>Zonnepanelen + batterij &middot; Ronse</span></div></div>
+  <div class="quotes quotes-duo reveal">
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Wij hebben zonnepanelen, een batterij en publiek toegankelijke laadpalen laten plaatsen door ADW. Dat is geen standaardinstallatie, en het is ook niet alleen techniek: er komt administratie en afstemming bij kijken. Koen en zijn ploeg hebben dat van begin tot einde opgevolgd. Afspraken werden nagekomen en wanneer ik bel, krijg ik iemand die het dossier kent."</p><div class="who">Christophe Fort<span>Zonnepanelen + batterij + publieke laadpalen &middot; Senor bv, Ronse</span></div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Wij hebben zonnepanelen met een batterij laten plaatsen door ADW. Wat mij het meest is bijgebleven, is dat het gelopen is zoals afgesproken: er is uitgelegd wat er zou gebeuren, en dat is ook gebeurd. Geen verrassingen achteraf. Voor zoiets in en op je huis is dat precies wat je wil."</p><div class="who">Jean Luc Gheysens<span>Zonnepanelen + batterij &middot; Ronse</span></div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Onze eerste zonnepanelen zijn in 2009 door ADW geplaatst. In 2025 hebben wij opnieuw laten uitbreiden, nu met een batterij, en wij hebben er geen moment aan gedacht om ergens anders te gaan kijken. Na al die jaren weet je wat je aan iemand hebt. Dat het nog altijd dezelfde mensen zijn die langskomen, zegt genoeg."</p><div class="who">Michel en Marleen Minnaert-Van Den Broecke<span>Zonnepanelen 2009 + batterij 2025</span></div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Bij ons staan zonnepanelen, een batterij en de sturingssoftware van ADW. Dat laatste is wat het verschil maakt: ik moet er niet dagelijks naar omkijken, het regelt zichzelf, en als ik wil weten wat er gebeurt kan ik het gewoon opvolgen. Dat het door de installateur zelf gemaakt is, merk je - als er iets is, moet je niet naar een callcenter bellen."</p><div class="who">Bart Carbonelle<span>Zonnepanelen + batterij + energiebeheer (EMS)</span></div></div>
   </div>
 </div></section>
 
@@ -611,7 +605,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <h2 style="margin:16px 0 24px">Laat ons uw installatie ontwerpen.</h2>
       <p class="lead" style="margin-bottom:34px">Vertel ons kort iets over uw woning en wat u zoekt. Wij komen langs, kijken ter plaatse, en sturen een duidelijke offerte zonder verplichting.</p>
       <div class="ci"><span class="ic">&#9742;</span><div><b>Bellen</b><p>+32 495 30 38 99</p></div></div>
-      <div class="ci"><span class="ic">&#9993;</span><div><b>Verkoop &amp; service</b><p>info@alu-dewolf.be</p></div></div>
+      <div class="ci"><span class="ic">&#9993;</span><div><b>Verkoop &amp; service</b><p>koen.dewolf@alu-dewolf.be</p></div></div>
       <div class="ci"><span class="ic">&#127970;</span><div><b>Adres bureau</b><p>Elzelestraat 138, 9600 Ronse</p></div></div>
       <div class="ci"><span class="ic">&#128205;</span><div><b>Adres werkplaats</b><p>Keistraat 3, 9681 Maarkedal, België</p></div></div>
       <div class="ci"><span class="ic">&#128336;</span><div><b>Openingsuren</b><p>Enkel op afspraak</p></div></div>
@@ -646,11 +640,12 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     </div>
     <div><h4>Diensten</h4><a href="#solar">Zonnepanelen</a><a href="#solar">Batterijopslag</a><a href="#solar">Slimme monitoring</a><a href="why.html">Waarom ADW</a></div>
     <div><h4>Bedrijf</h4><a href="why.html">Waarom ADW</a><a href="projects.html">Realisaties</a><a href="#contact">Contact</a><a href="#contact">Boek nu een plaatsbezoek</a><a href="privacy.html">Privacyverklaring</a></div>
-    <div><h4>Contact</h4><a href="tel:+32495303899">+32 495 30 38 99</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">Enkel op afspraak</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
+    <div><h4>Contact</h4><a href="tel:+32495303899">+32 495 30 38 99</a><a href="mailto:koen.dewolf@alu-dewolf.be">koen.dewolf@alu-dewolf.be</a><a href="#contact">Enkel op afspraak</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026 ADW (voorlopig). Alle rechten voorbehouden. <a href="privacy.html">Privacyverklaring</a> &middot; BTW BE 0457.079.539 &middot; RESCERT-certificaat 01209</span>
-    <span>Ontwerpvoorbeeld door Noemsø Designs — Business</span>
+    <span>© 2026 ADW. Alle rechten voorbehouden. <a href="privacy.html">Privacyverklaring</a></span>
+    <span class="foot-legal">BTW BE 0457.079.539 &middot; RESCERT-certificaat 01209</span>
+    <span>Ontworpen door Noemsø Designs</span>
   </div>
 </div></footer>
 

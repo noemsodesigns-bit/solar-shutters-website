@@ -95,9 +95,11 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 
 /* Hero */
 .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+.hero .wrap{text-shadow:0 2px 18px rgba(20,23,28,.75),0 0 4px rgba(20,23,28,.5)}
+.hero .eyebrow{text-shadow:0 1px 2px rgba(20,23,28,.95),0 0 10px rgba(20,23,28,.85),0 0 22px rgba(20,23,28,.7)}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,28,.82) 0%,rgba(20,23,28,.55) 42%,rgba(20,23,28,.15) 100%),linear-gradient(0deg,rgba(20,23,28,.7),transparent 45%)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:brightness(1.12) saturate(1.04)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,28,.34) 0%,rgba(20,23,28,.12) 45%,rgba(20,23,28,0) 100%),linear-gradient(0deg,rgba(20,23,28,.22),transparent 34%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-top:60px;padding-bottom:60px}
 .hero h1{margin:18px 0 22px}
 .hero h1 span{display:block}
@@ -165,7 +167,7 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 /* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px}
 .gallery a{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:4px}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:.5s ease;filter:grayscale(.15)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
 .gallery a:hover img{transform:scale(1.07);filter:grayscale(0)}
 .gallery .tall{grid-row:span 2}.gallery .wide{grid-column:span 2}
 .gallery a::after{content:"";position:absolute;inset:0;border:1px solid rgba(205,164,52,0);transition:.3s}
@@ -173,6 +175,8 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 
 /* Testimonials */
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quotes.quotes-duo{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto}
+.quotes.quotes-solo{grid-template-columns:1fr;max-width:640px;margin:0 auto}
 .quote{background:var(--metal);border:1px solid var(--line);border-radius:4px;padding:30px 28px;border-top:2px solid var(--gold)}
 .quote .stars{color:var(--gold-bright);letter-spacing:3px;margin-bottom:14px;font-size:.95rem}
 .quote p{color:var(--silver);font-style:italic;margin-bottom:18px}
@@ -199,16 +203,17 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
 /* Footer */
-.footer{background:var(--black);border-top:1px solid var(--line);padding:64px 0 30px}
+.footer{background:linear-gradient(180deg,#d6dade 0%,#bcc2c9 46%,#a0a6af 100%);border-top:1px solid #eef1f5;box-shadow:inset 0 1px 0 #f4f7fa;padding:64px 0 30px;color:#3a4047}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:34px;margin-bottom:40px}
-.footer h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.84rem;color:var(--silver-bright);margin-bottom:16px}
-.footer a{display:block;color:var(--steel);font-size:.94rem;margin-bottom:9px}
+.footer h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.84rem;color:#1b1f25;margin-bottom:16px}
+.footer a{display:block;color:#3a4047;font-size:.94rem;margin-bottom:9px}
 .footer-grid > div:not(:first-child){padding-top:214px}
-.footer a:hover{color:var(--gold-bright)}
-.footer .muted{font-size:.92rem}
-.foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem;color:var(--steel-dim)}
+.footer a:hover{color:var(--gold-deep)}
+.footer .muted{font-size:.92rem;color:#4d535c}
+.foot-bottom{border-top:1px solid rgba(20,24,30,.18);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem;color:#565c66}
+.foot-legal{flex:1 1 auto;text-align:center}
 .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.badges span{font-family:var(--disp);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);border:1px solid var(--line-2);border-radius:3px;padding:5px 9px}
+.badges span{font-family:var(--disp);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#41474f;border:1px solid rgba(20,24,30,.22);border-radius:3px;padding:5px 9px}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
@@ -293,7 +298,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   "image": "https://solar-shutters-website.vercel.app/assets/hero.jpg",
   "logo": "https://solar-shutters-website.vercel.app/assets/logo-kdw.png",
   "description": "Family-run installer of premium solar panels, smart batteries, inverters and EV chargers in the Flemish Ardennes.",
-  "email": "info@alu-dewolf.be",
+  "email": "koen.dewolf@alu-dewolf.be",
   "telephone": "+32495303899",
   "address": {
     "@type": "PostalAddress",
@@ -342,7 +347,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   <div class="tb-l">Family-run since 1971 &nbsp;<span class="dot">&bull;</span>&nbsp; Certified solar installers &nbsp;<span class="dot">&bull;</span>&nbsp; VAT BE 0457.079.539</div>
   <div class="tb-r">
     <a href="tel:+32495303899">&#9742; +32 495 30 38 99</a>
-    <a href="mailto:info@alu-dewolf.be">&#9993; info@alu-dewolf.be</a>
+    <a href="mailto:koen.dewolf@alu-dewolf.be">&#9993; koen.dewolf@alu-dewolf.be</a>
   </div>
 </div></div>
 
@@ -405,18 +410,6 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   </div>
 </section>
 
-<!-- DUAL SERVICE SPLIT -->
-<section class="split-services" style="grid-template-columns:1fr">
-  <div class="svc">
-    <img src="../assets/solar-rooftop.jpg" alt="Sleek black solar panels on a modern home roof" width="1600" height="893" loading="lazy" decoding="async">
-    <div class="svc-body">
-      <div class="eyebrow">Service 01</div>
-      <h3>Solar Panels</h3>
-      <p>Tier-1 panels, smart inverters and optional battery storage — designed around your roof and your bills.</p>
-      <a class="svc-link" href="#solar">Explore solar</a>
-    </div>
-  </div>
-</section>
 
 <!-- SOLAR SECTION -->
 <section class="section" id="solar"><div class="wrap">
@@ -562,10 +555,11 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 <!-- TESTIMONIALS -->
 <section class="section"><div class="wrap">
   <div class="sec-head reveal"><div class="eyebrow">What clients say</div><h2>Trusted by neighbours, recommended by name.</h2></div>
-  <div class="quotes reveal">
-    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Spotless install and the bill speaks for itself — down by two thirds. They explained everything and cleaned up like they were never here."</p><div class="who">Placeholder Name<span>Solar + battery &middot; Maarkedal</span></div></div>
-    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"[Reference to follow] Clean installation and the output speaks for itself — exactly what was promised."</p><div class="who">Placeholder Name<span>Solar panels &middot; Oudenaarde</span></div></div>
-    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"A proper family firm. Same faces start to finish, honest quote, and they still pick up the phone a year later."</p><div class="who">Placeholder Name<span>Solar + battery &middot; Ronse</span></div></div>
+  <div class="quotes quotes-duo reveal">
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"We had ADW install solar panels, a battery and publicly accessible charging points. That is not a standard installation, and it is not only technical: there is paperwork and coordination involved as well. Koen and his team followed it through from start to finish. Agreements were kept, and when I call, I get someone who knows the file."</p><div class="who">Christophe Fort<span>Solar panels + battery + public charging points &middot; Senor bv, Ronse</span></div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"We had solar panels with a battery installed by ADW. What stayed with me most is that it went exactly as agreed: we were told what would happen, and that is what happened. No surprises afterwards. For something in and on your house, that is precisely what you want."</p><div class="who">Jean Luc Gheysens<span>Solar panels + battery &middot; Ronse</span></div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Our first solar panels were installed by ADW in 2009. In 2025 we had the system extended, this time with a battery, and we never for a moment considered looking elsewhere. After all those years you know what someone is worth. That it is still the same people who turn up says enough."</p><div class="who">Michel and Marleen Minnaert-Van Den Broecke<span>Solar panels 2009 + battery 2025</span></div></div>
+    <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"We have solar panels, a battery and ADW's own control software. That last part is what makes the difference: I do not have to check on it daily, it manages itself, and if I want to know what is happening I can simply follow it. You can tell it was built by the installer themselves - if something is wrong, you are not calling a call centre."</p><div class="who">Bart Carbonelle<span>Solar panels + battery + energy management (EMS)</span></div></div>
   </div>
 </div></section>
 
@@ -578,7 +572,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       <h2 style="margin:16px 0 24px">Let's design your system.</h2>
       <p class="lead" style="margin-bottom:34px">Tell us a little about your home and what you're after. We'll come out, take a look, and send a clear, no-pressure quote.</p>
       <div class="ci"><span class="ic">&#9742;</span><div><b>Call</b><p>+32 495 30 38 99</p></div></div>
-      <div class="ci"><span class="ic">&#9993;</span><div><b>Sales &amp; service</b><p>info@alu-dewolf.be</p></div></div>
+      <div class="ci"><span class="ic">&#9993;</span><div><b>Sales &amp; service</b><p>koen.dewolf@alu-dewolf.be</p></div></div>
       <div class="ci"><span class="ic">&#127970;</span><div><b>Office address</b><p>Elzelestraat 138, 9600 Ronse</p></div></div>
       <div class="ci"><span class="ic">&#128205;</span><div><b>Workshop address</b><p>Keistraat 3, 9681 Maarkedal, Belgium</p></div></div>
       <div class="ci"><span class="ic">&#128336;</span><div><b>Hours</b><p>By appointment only</p></div></div>
@@ -613,11 +607,12 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     </div>
     <div><h4>Services</h4><a href="#solar">Solar panels</a><a href="#solar">Battery storage</a><a href="#solar">Smart monitoring</a><a href="why.html">Why ADW</a></div>
     <div><h4>Company</h4><a href="why.html">Why ADW</a><a href="projects.html">Projects</a><a href="#contact">Contact</a><a href="#contact">Book a site inspection</a><a href="privacy.html">Privacy statement</a></div>
-    <div><h4>Get in touch</h4><a href="tel:+32495303899">+32 495 30 38 99</a><a href="mailto:info@alu-dewolf.be">info@alu-dewolf.be</a><a href="#contact">By appointment only</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
+    <div><h4>Get in touch</h4><a href="tel:+32495303899">+32 495 30 38 99</a><a href="mailto:koen.dewolf@alu-dewolf.be">koen.dewolf@alu-dewolf.be</a><a href="#contact">By appointment only</a><p class="muted" style="margin-top:8px">Keistraat 3, 9681 Maarkedal</p></div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026 ADW (placeholder). All rights reserved. <a href="privacy.html">Privacy statement</a> &middot; VAT BE 0457.079.539 &middot; RESCERT certificate 01209</span>
-    <span>Design preview by Noemsø Designs — Business</span>
+    <span>© 2026 ADW. All rights reserved. <a href="privacy.html">Privacy statement</a></span>
+    <span class="foot-legal">VAT BE 0457.079.539 &middot; RESCERT certificate 01209</span>
+    <span>Designed by Noemsø Designs</span>
   </div>
 </div></footer>
 
