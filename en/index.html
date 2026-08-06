@@ -272,6 +272,16 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .nav-links .drop a{padding:6px 0}
   .nav-links .drop a .s{display:none}
 }
+
+/* Nav row runs out of room before the 900px breakpoint: the FR and EN labels are
+   longer than the Dutch ones, and the FAQ item is one more thing to fit. Hand the
+   menu to the hamburger earlier. Only the nav switches here - the layout rules at
+   900px below are untouched. */
+@media(max-width:1060px){
+  .nav-links,.nav-right .btn,.topbar .tb-l{display:none}
+  .nav-toggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:var(--black-2);border-bottom:1px solid var(--line);padding:18px 28px;gap:16px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -352,7 +362,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     </li>
     <li class="hasdrop"><a href="faq.html">Energy explained</a>
       <ul class="drop">
-        <li><a href="faq.html">Frequently asked questions<span class="s">24 questions, answered</span></a></li>
+        <li><a href="faq.html">Frequently asked questions<span class="s">25 questions, answered</span></a></li>
         <li class="sep"></li>
         <li><a href="terugverdientijd.html">Payback time in 2026<span class="s">What has changed</span></a></li>
         <li><a href="capaciteitstarief.html">The capacity tariff explained<span class="s">Your peak counts for more than your usage</span></a></li>
@@ -360,6 +370,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
         <li><a href="premies-btw.html">Grants and VAT in 2026<span class="s">What still exists</span></a></li>
       </ul>
     </li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="why.html">Why ADW</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -373,7 +384,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg"><img src="../assets/hero-villa-dusk.jpg" alt="Modern villa at dusk with solar panels" width="1600" height="892"></div>
+  <div class="hero-bg"><img src="../assets/hero-villa-dusk.jpg" alt="Modern home with a full black solar roof in evening light" width="1600" height="892"></div>
   <div class="wrap">
     <div class="eyebrow">Solar Panels, Batteries &amp; EV Chargers</div>
     <h1><span>Your home. Your energy.</span><span class="gold">Shield it in style.</span></h1>
@@ -422,13 +433,13 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       </ul>
       <a class="btn btn-gold" href="#contact">Book a site inspection now</a>
     </div>
-    <div class="duo-media"><img src="../assets/solar-detail.jpg" alt="Technician installing a black solar panel on a rooftop rail" width="1400" height="1045" loading="lazy" decoding="async"><div class="edge"></div></div>
+    <div class="duo-media"><img src="../assets/solar-detail.jpg" alt="Close-up of an all-black roof with dormer, panels aligned edge to edge" width="1400" height="1045" loading="lazy" decoding="async"><div class="edge"></div></div>
   </div>
 
   <div class="solar-strip reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px">
     <img src="../assets/solar-tiled-roof.jpg" alt="Black solar panels on a Belgian tiled-roof home" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
     <img src="../assets/solar-modern-villa.jpg" alt="Modern villa with a full rooftop solar array" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
-    <img src="../assets/solar-aerial.jpg" alt="Aerial view of a residential rooftop solar installation" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
+    <img src="../assets/solar-aerial.jpg" alt="Overhead view of solar panels on a flat roof" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
   </div>
 
   <hr class="hr-gold" style="margin:80px 0">

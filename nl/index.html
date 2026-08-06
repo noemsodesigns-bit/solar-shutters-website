@@ -305,6 +305,16 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .nav .nav-links > li > a{font-size:.87rem;letter-spacing:.01em}
   .nav-right .btn-gold{padding:10px 11px;font-size:.72rem}
 }
+
+/* Nav row runs out of room before the 900px breakpoint: the FR and EN labels are
+   longer than the Dutch ones, and the FAQ item is one more thing to fit. Hand the
+   menu to the hamburger earlier. Only the nav switches here - the layout rules at
+   900px below are untouched. */
+@media(max-width:1060px){
+  .nav-links,.nav-right .btn,.topbar .tb-l{display:none}
+  .nav-toggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:var(--black-2);border-bottom:1px solid var(--line);padding:18px 28px;gap:16px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -385,7 +395,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     </li>
     <li class="hasdrop"><a href="faq.html">Energie uitgelegd</a>
       <ul class="drop">
-        <li><a href="faq.html">Veelgestelde vragen<span class="s">24 vragen, met antwoord</span></a></li>
+        <li><a href="faq.html">Veelgestelde vragen<span class="s">25 vragen, met antwoord</span></a></li>
         <li class="sep"></li>
         <li><a href="terugverdientijd.html">Terugverdientijd in 2026<span class="s">Wat er veranderd is</span></a></li>
         <li><a href="capaciteitstarief.html">Capaciteitstarief uitgelegd<span class="s">Uw piek weegt zwaarder dan uw verbruik</span></a></li>
@@ -393,6 +403,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
         <li><a href="premies-btw.html">Premies en btw in 2026<span class="s">Wat er nog bestaat</span></a></li>
       </ul>
     </li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="why.html">Waarom ADW</a></li>
     <li><a href="projects.html">Realisaties</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -406,7 +417,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg"><img src="../assets/hero-villa-dusk.jpg" alt="Moderne villa in de schemering met zonnepanelen" width="1600" height="892"></div>
+  <div class="hero-bg"><img src="../assets/hero-villa-dusk.jpg" alt="Moderne woning met een volledig zwart zonnepaneeldak in het avondlicht" width="1600" height="892"></div>
   <div class="wrap">
     <div class="eyebrow">Zonnepanelen, batterijen &amp; laadpalen</div>
     <h1><span>Verlaag uw factuur.</span><span class="gold sub">Energie waarop U kan rekenen</span></h1>
@@ -455,13 +466,13 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       </ul>
       <a class="btn btn-gold" href="#contact">Boek nu een plaatsbezoek</a>
     </div>
-    <div class="duo-media"><img src="../assets/solar-detail.jpg" alt="Technicus plaatst een zwart zonnepaneel op een dakrail" width="1400" height="1045" loading="lazy" decoding="async"><div class="edge"></div></div>
+    <div class="duo-media"><img src="../assets/solar-detail.jpg" alt="Detail van een volledig zwart dak met dakkapel, panelen strak uitgelijnd" width="1400" height="1045" loading="lazy" decoding="async"><div class="edge"></div></div>
   </div>
 
   <div class="solar-strip reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px">
     <img src="../assets/solar-tiled-roof.jpg" alt="Zwarte zonnepanelen op een Belgische woning met pannendak" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
     <img src="../assets/solar-modern-villa.jpg" alt="Moderne villa met een volledig dak vol zonnepanelen" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
-    <img src="../assets/solar-aerial.jpg" alt="Luchtfoto van een zonnepaneelinstallatie op een woningdak" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
+    <img src="../assets/solar-aerial.jpg" alt="Bovenaanzicht van zonnepanelen op een plat dak" style="width:100%;height:240px;object-fit:cover;border:1px solid var(--line);border-radius:4px" width="1500" height="837" loading="lazy" decoding="async">
   </div>
 
   <hr class="hr-gold" style="margin:80px 0">
