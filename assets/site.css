@@ -226,8 +226,8 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 @media(max-width:900px){.lang-switch a .lb{display:none}.lang-switch a{padding:5px 7px}}
 
 /* --- intake forms (solar + shutters) --- */
-.intake .check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.92rem;line-height:1.45;cursor:pointer}
-.intake .check input{margin-top:3px;flex:none;width:16px;height:16px;accent-color:#e7c976;cursor:pointer}
+.intake .check{display:flex;gap:14px;align-items:flex-start;margin:14px 0;font-size:.92rem;line-height:1.45;cursor:pointer}
+.intake .check input{margin:3px 0 0;flex:none;width:16px;height:16px;accent-color:#e7c976;cursor:pointer}
 .intake select:invalid{color:#7d858f}
 .intake .formnote.ok{color:#8fd39a}
 .intake .formnote.err{color:#e88f8f}
