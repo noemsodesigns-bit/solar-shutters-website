@@ -322,6 +322,11 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .nav-toggle{display:block}
   .nav-links.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:var(--black-2);border-bottom:1px solid var(--line);padding:18px 28px;gap:16px}
 }
+
+.photo-band{position:relative;border-radius:5px;overflow:hidden;border:1px solid var(--line-2);margin:0}
+.photo-band img{width:100%;height:clamp(260px,40vw,440px);object-fit:cover;display:block}
+.photo-band .edge{position:absolute;inset:0;border:1px solid rgba(205,164,52,.25);pointer-events:none}
+.photo-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 22px 16px;background:linear-gradient(0deg,rgba(20,23,28,.85),rgba(20,23,28,.35) 55%,transparent);color:var(--silver);font-size:.92rem;line-height:1.5}
 </style>
 <script type="application/ld+json">
 {
@@ -590,6 +595,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 <!-- TESTIMONIALS -->
 <section class="section"><div class="wrap">
   <div class="sec-head reveal"><div class="eyebrow">Wat klanten zeggen</div><h2>Vertrouwd door buren, aanbevolen bij naam.</h2></div>
+  <figure class="photo-band reveal" style="margin:0 0 26px"><img src="../assets/koen-jeanluc.jpg" style="object-position:50% 28%;height:clamp(340px,52vw,620px)" alt="Koen van ADW geeft Jean Luc Gheysens een hand voor diens woning met zonnepanelen in Ronse" width="1600" height="1067" loading="lazy" decoding="async"><div class="edge"></div><figcaption>Koen bij Jean Luc Gheysens in Ronse, na de plaatsing van zijn zonnepanelen met batterij.</figcaption></figure>
   <div class="quotes quotes-duo reveal">
     <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Wij hebben zonnepanelen, een batterij en publiek toegankelijke laadpalen laten plaatsen door ADW. Dat is geen standaardinstallatie, en het is ook niet alleen techniek: er komt administratie en afstemming bij kijken. Koen en zijn ploeg hebben dat van begin tot einde opgevolgd. Afspraken werden nagekomen en wanneer ik bel, krijg ik iemand die het dossier kent."</p><div class="who">Christophe Fort<span>Zonnepanelen + batterij + publieke laadpalen &middot; Senor bv, Ronse</span></div></div>
     <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Wij hebben zonnepanelen met een batterij laten plaatsen door ADW. Wat mij het meest is bijgebleven, is dat het gelopen is zoals afgesproken: er is uitgelegd wat er zou gebeuren, en dat is ook gebeurd. Geen verrassingen achteraf. Voor zoiets in en op je huis is dat precies wat je wil."</p><div class="who">Jean Luc Gheysens<span>Zonnepanelen + batterij &middot; Ronse</span></div></div>

@@ -289,6 +289,11 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   .nav-toggle{display:block}
   .nav-links.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:var(--black-2);border-bottom:1px solid var(--line);padding:18px 28px;gap:16px}
 }
+
+.photo-band{position:relative;border-radius:5px;overflow:hidden;border:1px solid var(--line-2);margin:0}
+.photo-band img{width:100%;height:clamp(260px,40vw,440px);object-fit:cover;display:block}
+.photo-band .edge{position:absolute;inset:0;border:1px solid rgba(205,164,52,.25);pointer-events:none}
+.photo-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 22px 16px;background:linear-gradient(0deg,rgba(20,23,28,.85),rgba(20,23,28,.35) 55%,transparent);color:var(--silver);font-size:.92rem;line-height:1.5}
 </style>
 <script type="application/ld+json">
 {
@@ -557,6 +562,7 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 <!-- TESTIMONIALS -->
 <section class="section"><div class="wrap">
   <div class="sec-head reveal"><div class="eyebrow">Ce que disent nos clients</div><h2>La confiance des voisins, recommandés par leur nom.</h2></div>
+  <figure class="photo-band reveal" style="margin:0 0 26px"><img src="../assets/koen-jeanluc.jpg" style="object-position:50% 28%;height:clamp(340px,52vw,620px)" alt="Koen d'ADW serre la main de Jean Luc Gheysens devant sa maison &eacute;quip&eacute;e de panneaux solaires &agrave; Ronse" width="1600" height="1067" loading="lazy" decoding="async"><div class="edge"></div><figcaption>Koen chez Jean Luc Gheysens &agrave; Ronse, apr&egrave;s la pose de ses panneaux solaires avec batterie.</figcaption></figure>
   <div class="quotes quotes-duo reveal">
     <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Nous avons fait installer par ADW des panneaux solaires, une batterie et des bornes de recharge accessibles au public. Ce n'est pas une installation standard, et ce n'est pas seulement de la technique : il y a aussi de l'administratif et de la coordination. Koen et son équipe ont suivi cela du début à la fin. Les engagements ont été tenus et quand j'appelle, j'ai quelqu'un qui connaît le dossier."</p><div class="who">Christophe Fort<span>Panneaux solaires + batterie + bornes publiques &middot; Senor bv, Renaix</span></div></div>
     <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Nous avons fait installer des panneaux solaires avec une batterie par ADW. Ce qui m'a le plus marqué, c'est que tout s'est passé comme convenu : on nous a expliqué ce qui allait se faire, et c'est exactement ce qui s'est fait. Aucune surprise après coup. Pour quelque chose qui touche à votre maison, c'est précisément ce que l'on souhaite."</p><div class="who">Jean Luc Gheysens<span>Panneaux solaires + batterie &middot; Renaix</span></div></div>
