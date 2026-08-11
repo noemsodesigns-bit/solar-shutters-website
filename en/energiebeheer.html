@@ -346,15 +346,38 @@
   </div>
 </div></section>
 
-<section class="section" id="cta" style="background:var(--black-2);border-top:1px solid var(--line)"><div class="wrap">
-  <div class="sec-head reveal" style="text-align:center;max-width:720px;margin:0 auto">
-    <div class="eyebrow">Book a site inspection</div>
-    <h2 style="margin:16px 0 18px">We come and look first. <span class="gold">The price comes after.</span></h2>
-    <p class="lead">Tell us a little about your home. We come out, look at it in person, and send a clear quote with no obligation.</p>
-    <p style="margin-top:26px"><a class="btn btn-gold" href="index.html#contact">Book a site inspection now</a>
-    <a class="btn btn-steel" href="tel:+32495303899" style="margin-left:10px">&#9742; Call +32 495 30 38 99</a></p>
+<section class="section" id="contact"><div class="wrap">
+  <div class="quote-grid">
+    <div class="contact-block reveal">
+      <div class="eyebrow">Book a site inspection</div>
+      <h2 style="margin:16px 0 24px">Let's design your system.</h2>
+      <p class="lead" style="margin-bottom:34px">Tell us a little about your home and what you're after. We'll come out, take a look, and send a clear, no-pressure quote.</p>
+      <div class="ci"><span class="ic">&#9742;</span><div><b>Call</b><p>+32 495 30 38 99</p></div></div>
+      <div class="ci"><span class="ic">&#9993;</span><div><b>Sales &amp; service</b><p>koen.dewolf@alu-dewolf.be</p></div></div>
+      <div class="ci"><span class="ic">&#127970;</span><div><b>Office address</b><p>Elzelestraat 138, 9600 Ronse</p></div></div>
+      <div class="ci"><span class="ic">&#128205;</span><div><b>Workshop address</b><p>Keistraat 3, 9681 Maarkedal, Belgium</p></div></div>
+      <div class="ci"><span class="ic">&#128336;</span><div><b>Hours</b><p>By appointment only</p></div></div>
+    </div>
+    <form class="intake" action="https://formspree.io/f/mjgnykgk" method="POST" data-ep-solar="https://formspree.io/f/mjgnykgk" data-ep-shutters="https://formspree.io/f/mykrezkp" data-ok="Thanks — your request has reached us. We'll be in touch shortly." data-err="Something went wrong sending that. Please call us on +32 495 30 38 99." data-sending="Sending…">
+      <input type="hidden" name="_subject" value="New ADW site-inspection request — Energiebeheer (EN)">
+      <input type="hidden" name="language" value="en">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+      <div class="field-row">
+        <div class="field"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
+        <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="Your number"></div>
+      </div>
+      <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+      <div class="field"><label>I'm interested in</label>
+        <select name="trade"><option value="zonnepanelen">Solar panels</option><option value="batterijen">Smart batteries</option><option value="omvormer">Inverter</option><option value="ems" selected>Energy management software</option><option value="laadpalen">EV chargers</option></select>
+      </div>
+      <div class="field"><label>Tell us about your home</label><textarea name="message" rows="4" placeholder="Roof type, age of home, what you'd like to achieve…"></textarea></div>
+      <label class="check"><input type="checkbox" name="consent" value="yes" required><span>You may store my details so ADW can contact me about this request.</span></label>
+      <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Book my site inspection</button>
+      <p class="formnote muted" style="display:none;margin-top:14px;font-size:.9rem"></p>
+    </form>
   </div>
 </div></section>
+
 
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
@@ -376,5 +399,31 @@
 
 <script src="../assets/site.js"></script>
 <script>try{localStorage.setItem("kdw-lang","en")}catch(e){}</script>
+<script>
+document.querySelectorAll('form.intake').forEach(function(f){
+  var sel = f.querySelector('select[name=trade]');
+  function route(){
+    if (!sel) return;
+    var v = sel.value;
+    f.action = (v === 'shutters') ? f.dataset.epShutters : f.dataset.epSolar;
+  }
+  if (sel) { sel.addEventListener('change', route); route(); }
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var note = f.querySelector('.formnote');
+    var btn  = f.querySelector('button[type=submit]');
+    var label = btn.textContent;
+    btn.disabled = true; btn.textContent = f.dataset.sending;
+    note.style.display = 'none'; note.className = 'formnote muted';
+    fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if (r.ok) { note.textContent = f.dataset.ok; note.classList.add('ok'); f.reset(); route(); }
+        else { note.textContent = f.dataset.err; note.classList.add('err'); }
+      })
+      .catch(function(){ note.textContent = f.dataset.err; note.classList.add('err'); })
+      .finally(function(){ note.style.display='block'; btn.disabled=false; btn.textContent=label; });
+  });
+});
+</script>
 </body>
 </html>
