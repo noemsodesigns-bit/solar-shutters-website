@@ -376,3 +376,8 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .lightbox .lb-prev{left:26px;top:50%;transform:translateY(-50%)}
 .lightbox .lb-next{right:26px;top:50%;transform:translateY(-50%)}
 @media(max-width:700px){.lightbox{padding:16px}.lightbox .lb-prev{left:10px}.lightbox .lb-next{right:10px}}
+
+/* Slow Ken Burns zoom on featured photos - added 2026-08-11 */
+.kb img{animation:kbzoom 20s ease-in-out infinite alternate;transform-origin:60% 45%;will-change:transform}
+@keyframes kbzoom{from{transform:scale(1)}to{transform:scale(1.09)}}
+@media(prefers-reduced-motion:reduce){.kb img{animation:none}}
