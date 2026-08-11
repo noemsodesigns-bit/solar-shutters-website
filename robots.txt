@@ -26,4 +26,4 @@ Disallow: /why.html
 Disallow: /projects.html
 Disallow: /shutters.html
 
-Sitemap: https://solar-shutters-website.vercel.app/sitemap.xml
+Sitemap: https://alu-dewolf.be/sitemap.xml

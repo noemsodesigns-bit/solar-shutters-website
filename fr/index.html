@@ -10,15 +10,15 @@
 <meta property="og:locale" content="fr_BE">
 <meta property="og:title" content="ADW — Panneaux solaires, batteries &amp; bornes de recharge">
 <meta property="og:description" content="Installateurs familiaux de panneaux solaires haut de gamme, de batteries intelligentes et de bornes de recharge. Des factures réduites, des maisons plus intelligentes, un travail qui se voit.">
-<meta property="og:url" content="https://solar-shutters-website.vercel.app/fr/index.html">
-<meta property="og:image" content="https://solar-shutters-website.vercel.app/assets/hero.jpg">
+<meta property="og:url" content="https://alu-dewolf.be/fr/index.html">
+<meta property="og:image" content="https://alu-dewolf.be/assets/hero.jpg">
 <meta property="og:image:width" content="1900">
 <meta property="og:image:height" content="1267">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ADW — Panneaux solaires, batteries &amp; bornes de recharge">
 <meta name="twitter:description" content="Installateurs familiaux de panneaux solaires haut de gamme, de batteries intelligentes et de bornes de recharge. Des factures réduites, des maisons plus intelligentes, un travail qui se voit.">
-<meta name="twitter:image" content="https://solar-shutters-website.vercel.app/assets/hero.jpg">
-<link rel="canonical" href="https://solar-shutters-website.vercel.app/fr/index.html">
+<meta name="twitter:image" content="https://alu-dewolf.be/assets/hero.jpg">
+<link rel="canonical" href="https://alu-dewolf.be/fr/index.html">
 <link rel="alternate" hreflang="nl" href="../nl/index.html">
 <link rel="alternate" hreflang="fr" href="../fr/index.html">
 <link rel="alternate" hreflang="en" href="../en/index.html">
@@ -100,6 +100,10 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 .hero .eyebrow::before{display:none}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:brightness(1.12) saturate(1.04)}
+/* slow camera drift on the hero photo (Ken Burns) */
+.hero-bg img{animation:kenburns 13s linear infinite alternate;transform-origin:40% 52%;will-change:transform}
+@keyframes kenburns{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.21) translate3d(-2.5%,-2%,0)}}
+@media(prefers-reduced-motion:reduce){.hero-bg img{animation:none}}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,28,.34) 0%,rgba(20,23,28,.12) 45%,rgba(20,23,28,0) 100%),linear-gradient(0deg,rgba(20,23,28,.22),transparent 34%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-top:60px;padding-bottom:60px}
 .hero h1{margin:18px 0 22px}
@@ -300,11 +304,11 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 {
   "@context": "https://schema.org",
   "@type": "ElectricalContractor",
-  "@id": "https://solar-shutters-website.vercel.app/#organization",
+  "@id": "https://alu-dewolf.be/#organization",
   "name": "ADW",
-  "url": "https://solar-shutters-website.vercel.app/fr/index.html",
-  "image": "https://solar-shutters-website.vercel.app/assets/hero.jpg",
-  "logo": "https://solar-shutters-website.vercel.app/assets/logo-kdw.png",
+  "url": "https://alu-dewolf.be/fr/index.html",
+  "image": "https://alu-dewolf.be/assets/hero.jpg",
+  "logo": "https://alu-dewolf.be/assets/logo-kdw.png",
   "description": "Installateur familial de panneaux solaires premium, batteries intelligentes, onduleurs et bornes de recharge dans les Ardennes flamandes.",
   "email": "koen.dewolf@alu-dewolf.be",
   "telephone": "+32495303899",
