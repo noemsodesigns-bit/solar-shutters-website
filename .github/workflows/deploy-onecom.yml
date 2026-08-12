@@ -21,6 +21,10 @@ on:
         description: 'Connect and list only — upload nothing'
         type: boolean
         default: false
+      archive_old:
+        description: 'Step 5: move the 2006 site into old-site/ (nothing is deleted)'
+        type: boolean
+        default: false
 
 concurrency:
   group: onecom-deploy       # never let two uploads overlap
@@ -47,8 +51,30 @@ jobs:
             open -u \"$USER\",\"$PASS\" sftp://$HOST:22; \
             cls -l /webroots/www/"
 
+      # Step 5, part one. Moves the 2006 FrontPage site out of the way into
+      # old-site/. Nothing is deleted, so it can all be moved back.
+      - name: Archive the old site
+        if: inputs.archive_old
+        env:
+          HOST: ${{ secrets.SFTP_HOST }}
+          USER: ${{ secrets.SFTP_USERNAME }}
+          PASS: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          OLD="_vti_bin _vti_cnf _vti_log _vti_pvt _vti_txt files myalbum \
+               .htaccess _vti_inf.html contact.html default.htm default.html \
+               error.html fuzzybird1.mp3 index.htm index.html information.html \
+               myalbum.html myalbum.swf myalbum.xml noscript.html postinfo.html \
+               product.html soundrangers_rollover02.mp3"
+          CMDS="set sftp:auto-confirm yes; open -u \"$USER\",\"$PASS\" sftp://$HOST:22; mkdir -p /webroots/www/old-site;"
+          for f in $OLD; do
+            CMDS="$CMDS mv /webroots/www/$f /webroots/www/old-site/$f;"
+          done
+          CMDS="$CMDS cls -l /webroots/www/"
+          lftp -c "$CMDS" || true
+          echo "--- old site archived (errors above are files that were already moved) ---"
+
       - name: Upload the site
-        if: ${{ !inputs.dry_run }}
+        if: ${{ !inputs.dry_run && !inputs.archive_old }}
         env:
           HOST: ${{ secrets.SFTP_HOST }}
           USER: ${{ secrets.SFTP_USERNAME }}
