@@ -1,26 +1,80 @@
-# A&K — Solar & Roller Shutters (Design Preview)
+# alu-dewolf.be — Aluminium De Wolf
 
-Single-page demo site for a family-run solar panel + automated roller-shutter installer.
-Black / shiny-silver / gold industrial aesthetic. Self-contained: `index.html` + `assets/`.
+Website for Aluminium De Wolf (ADW), a family-run installer in Belgium working in
+solar panels, home batteries, EV charging and automated roller shutters.
 
-## Preview
-Open over http(s) (some browsers need it for fonts/JS):
-    cd "solar-shutters-website" && python3 -m http.server 8123
-    → http://localhost:8123
+Live at **https://alu-dewolf.be**. Review build: **https://adw-11aug.vercel.app**
 
-## ⚠️ All placeholder — swap before going live
-- **Business name:** "A&K" (placeholder — rename throughout)
-- **Phone / email / address / service area:** placeholder (+32 56 00 00 00, hello@alu-dewolf.be)
-- **Stats & reviews:** "4.9/5, 1,200+ installs, 25+ years" and all testimonials are placeholders
-- **Photos:** stock (Unsplash) in `assets/` — replace with real job photos, especially the gallery
-- **Quote form:** demo only — wire to email/Formspree/backend before launch
-- **Language:** English — can be rebuilt in NL / FR
+Built by **Kathleen Deviaene** (Noemsø Designs) in 2026, replacing the owner's
+original Microsoft FrontPage site from 2006.
 
-## Structure
-Hero → dual-service split → Solar Panels → Roller Shutters (solar-powered,
-no wiring, app/voice control, weather-responsive) → Why Us (family) → Process → Projects
-gallery → Testimonials → CTA → Contact/quote → Footer.
+## What it is
 
-## Notes
-- Roller-shutter content: solar-powered (no cabling, 7-yr warranty, app/voice control).
-- Scroll-reveal via IntersectionObserver; mobile nav + smooth scroll in inline JS.
+A static site — plain HTML, one CSS file, a little inline JavaScript. No build step,
+no framework, no database. That is deliberate: it loads fast, it cannot break in an
+update, and it can be hosted anywhere, including the owner's existing one.com plan.
+
+**48 pages, in three languages.** Dutch is the primary language; French and English
+are full parity translations, not partial ones. Belgium's language situation makes
+this necessary rather than optional — ADW sits near the linguistic border and serves
+customers on both sides of it.
+
+```
+index.html, solar.html, why.html, projects.html   redirect / entry pages
+nl/   Dutch      (primary)     16 pages
+fr/   French                   16 pages
+en/   English                  16 pages
+assets/                        CSS, images, fonts
+sitemap.xml, robots.txt        search engines
+404.html                       not-found page
+```
+
+Each language folder carries the same set: home, solar panels, home batteries,
+inverters, battery sizing, payback time, capacity tariff, energy management,
+EV chargers, subsidies & VAT, projects, why us, FAQ, privacy.
+
+## Running it locally
+
+There is nothing to install. Serve the folder over HTTP — opening the files
+directly with `file://` will break fonts and some scripts:
+
+```bash
+python3 -m http.server 8123
+# then open http://localhost:8123
+```
+
+## Enquiry form
+
+All 42 forms across the site post to **Formspree** (`f/mjgnykgk`), which emails the
+submission on to ADW. The subject line identifies which page the enquiry came from,
+so ADW can see whether someone was reading about batteries or roller shutters when
+they got in touch.
+
+The form asks for an **inspection**, not a quote. No price is promised anywhere on
+the site before someone has looked at the roof — that is a deliberate commercial
+choice by the owner, and the `.quote` CSS classes and surrounding copy should not be
+reworded without asking him.
+
+## Safety net
+
+Every significant change is tagged before it happens, so any of them can be undone:
+
+| Tag | Undoes |
+|---|---|
+| `pre-domain-swap` | The switch from the Vercel test address to alu-dewolf.be (650 URLs) |
+| `pre-form-everywhere` | Rolling the enquiry form out to every page |
+| `pre-home-reorder` | The homepage section reordering |
+| `pre-energie-images`, `-v2` | Energy-page image changes |
+| `pre-rolluiken-roma-removal` | Removal of Roma branding from the roller-shutter pages |
+
+## Deployment
+
+Pushing to `main` does **not** publish the site by itself. Deployment is a separate
+step — see the ADW Go-Live Runbook for the GitHub-to-one.com upload path.
+
+## Open item
+
+Earlier copy claimed ADW wrote its own energy-management software. That is not
+correct and the wording still appears in several places on the energy-management
+pages. It is waiting on the owner's decision about how to describe the system
+instead. Do not publish those pages as authoritative until that is settled.
