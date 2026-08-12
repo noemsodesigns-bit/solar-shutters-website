@@ -1,21 +1,29 @@
 name: Deploy to one.com
 
-# Uploads the site to Koen's one.com hosting over FTP.
+# Uploads the site to Koen's one.com hosting over SFTP (encrypted).
 #
 # TARGET FOLDER: set by the repository variable DEPLOY_DIR.
-#   Not set            -> /nieuw/   (the hidden test folder — safe, the live site is untouched)
-#   Set to /           -> the live site at alu-dewolf.be
+#   Not set  -> /alu-dewolf.be/nieuw/   (hidden test folder — the live site is untouched)
+#   Set to /alu-dewolf.be/              -> the live site
 #
-# Leave it unset until Step 5 of the Go-Live Runbook. Changing one variable is
-# the whole go-live switch; no edit to this file is needed.
+# Leave it unset until Step 5 of the Go-Live Runbook. Changing that one variable
+# is the whole go-live switch; this file does not need editing.
+#
+# Run with "dry_run" ticked to connect and list the server without uploading
+# anything. Use that first, to confirm the folder layout.
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:        # also runnable by hand from the Actions tab
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Connect and list only — upload nothing'
+        type: boolean
+        default: false
 
 concurrency:
-  group: onecom-deploy      # never let two uploads overlap
+  group: onecom-deploy       # never let two uploads overlap
   cancel-in-progress: false
 
 jobs:
@@ -25,22 +33,40 @@ jobs:
       - name: Get the site files
         uses: actions/checkout@v4
 
-      - name: Upload changed files over FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ vars.DEPLOY_DIR || '/nieuw/' }}
-          protocol: ftps
-          # Only what changed goes up, so a normal edit takes seconds.
-          # Anything listed here stays out of the public web root.
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.vercel/**
-            **/_removed/**
-            **/node_modules/**
-            **/*.bak
-            README.md
-            .vercelignore
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Look at the server without changing it
+        if: inputs.dry_run
+        env:
+          HOST: ${{ secrets.SFTP_HOST }}
+          USER: ${{ secrets.SFTP_USERNAME }}
+          PASS: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          lftp -c "set sftp:auto-confirm yes; \
+            open -u \"$USER\",\"$PASS\" sftp://$HOST:22; \
+            cls -l /; echo '--- inside the domain folder ---'; cls -l /alu-dewolf.be/ || true"
+
+      - name: Upload the site
+        if: ${{ !inputs.dry_run }}
+        env:
+          HOST: ${{ secrets.SFTP_HOST }}
+          USER: ${{ secrets.SFTP_USERNAME }}
+          PASS: ${{ secrets.SFTP_PASSWORD }}
+          DEST: ${{ vars.DEPLOY_DIR || '/alu-dewolf.be/nieuw/' }}
+        run: |
+          lftp -c "set sftp:auto-confirm yes; \
+            open -u \"$USER\",\"$PASS\" sftp://$HOST:22; \
+            mkdir -p \"$DEST\"; \
+            mirror --reverse --only-newer --parallel=4 \
+              --exclude-glob .git*/ \
+              --exclude-glob .git* \
+              --exclude-glob .vercel/ \
+              --exclude-glob _removed/ \
+              --exclude-glob node_modules/ \
+              --exclude-glob *.bak \
+              --exclude-glob README.md \
+              --exclude-glob .vercelignore \
+              --exclude-glob .github/ \
+              . \"$DEST\""
+          echo "Uploaded to $DEST"
