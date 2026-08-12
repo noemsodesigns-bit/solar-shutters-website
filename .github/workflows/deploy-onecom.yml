@@ -3,8 +3,8 @@ name: Deploy to one.com
 # Uploads the site to Koen's one.com hosting over SFTP (encrypted).
 #
 # TARGET FOLDER: set by the repository variable DEPLOY_DIR.
-#   Not set  -> /alu-dewolf.be/nieuw/   (hidden test folder — the live site is untouched)
-#   Set to /alu-dewolf.be/              -> the live site
+#   Not set  -> /webroots/www/nieuw/   (hidden test folder — the live site is untouched)
+#   Set to /webroots/www/               -> the live site
 #
 # Leave it unset until Step 5 of the Go-Live Runbook. Changing that one variable
 # is the whole go-live switch; this file does not need editing.
@@ -45,7 +45,7 @@ jobs:
         run: |
           lftp -c "set sftp:auto-confirm yes; \
             open -u \"$USER\",\"$PASS\" sftp://$HOST:22; \
-            cls -l /www/; echo '--- webroots ---'; cls -l /webroots/"
+            cls -l /webroots/www/"
 
       - name: Upload the site
         if: ${{ !inputs.dry_run }}
@@ -53,7 +53,7 @@ jobs:
           HOST: ${{ secrets.SFTP_HOST }}
           USER: ${{ secrets.SFTP_USERNAME }}
           PASS: ${{ secrets.SFTP_PASSWORD }}
-          DEST: ${{ vars.DEPLOY_DIR || '/alu-dewolf.be/nieuw/' }}
+          DEST: ${{ vars.DEPLOY_DIR || '/webroots/www/nieuw/' }}
         run: |
           lftp -c "set sftp:auto-confirm yes; \
             open -u \"$USER\",\"$PASS\" sftp://$HOST:22; \
