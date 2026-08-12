@@ -1,0 +1,46 @@
+name: Deploy to one.com
+
+# Uploads the site to Koen's one.com hosting over FTP.
+#
+# TARGET FOLDER: set by the repository variable DEPLOY_DIR.
+#   Not set            -> /nieuw/   (the hidden test folder — safe, the live site is untouched)
+#   Set to /           -> the live site at alu-dewolf.be
+#
+# Leave it unset until Step 5 of the Go-Live Runbook. Changing one variable is
+# the whole go-live switch; no edit to this file is needed.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:        # also runnable by hand from the Actions tab
+
+concurrency:
+  group: onecom-deploy      # never let two uploads overlap
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the site files
+        uses: actions/checkout@v4
+
+      - name: Upload changed files over FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ vars.DEPLOY_DIR || '/nieuw/' }}
+          protocol: ftps
+          # Only what changed goes up, so a normal edit takes seconds.
+          # Anything listed here stays out of the public web root.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.vercel/**
+            **/_removed/**
+            **/node_modules/**
+            **/*.bak
+            README.md
+            .vercelignore
