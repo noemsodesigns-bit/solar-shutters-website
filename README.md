@@ -72,9 +72,10 @@ Every significant change is tagged before it happens, so any of them can be undo
 Pushing to `main` does **not** publish the site by itself. Deployment is a separate
 step — see the ADW Go-Live Runbook for the GitHub-to-one.com upload path.
 
-## Open item
+## Copy accuracy
 
-Earlier copy claimed ADW wrote its own energy-management software. That is not
-correct and the wording still appears in several places on the energy-management
-pages. It is waiting on the owner's decision about how to describe the system
-instead. Do not publish those pages as authoritative until that is settled.
+Early drafts described the energy-management system as software ADW had written
+itself. That was not accurate and was corrected in `b238667` and `90c2cf7` — the
+authorship wording is gone from all three languages. The pages now describe the
+system by what it does for the customer, which is the claim that can be stood
+behind.
