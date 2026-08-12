@@ -45,7 +45,7 @@ jobs:
         run: |
           lftp -c "set sftp:auto-confirm yes; \
             open -u \"$USER\",\"$PASS\" sftp://$HOST:22; \
-            cls -l /; echo '--- inside the domain folder ---'; cls -l /alu-dewolf.be/ || true"
+            cls -l /www/; echo '--- webroots ---'; cls -l /webroots/"
 
       - name: Upload the site
         if: ${{ !inputs.dry_run }}
