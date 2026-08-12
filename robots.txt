@@ -26,4 +26,9 @@ Disallow: /why.html
 Disallow: /projects.html
 Disallow: /shutters.html
 
+# Kept on the server but not part of the live site
+Disallow: /old-site/
+Disallow: /nieuw/
+Disallow: /test/
+
 Sitemap: https://alu-dewolf.be/sitemap.xml
