@@ -568,6 +568,43 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
   <hr class="hr-gold" style="margin:80px 0">
 
+  <!-- INSTALLATIE-ANIMATIE -->
+  <div class="sec-head reveal"><div class="eyebrow">Your installation</div><h2>From roof to battery to charger</h2>
+    <p class="lead">Solar panels, home battery and EV charger — how an installation comes together on your home, step by step.</p></div>
+
+  <style>
+  #adw-build{position:relative;aspect-ratio:16/9;min-height:300px;width:100%;
+    border:1px solid var(--line-2);border-radius:2px;overflow:hidden;background:var(--black)}
+  #adw-build canvas{display:block}
+  #adw-build img{position:absolute;left:6%;bottom:8%;z-index:2;width:clamp(110px,14%,190px);
+    height:auto;opacity:0;pointer-events:none;will-change:transform,opacity}
+  @media (max-width:640px){#adw-build{aspect-ratio:4/5}}
+</style>
+  <div id="adw-build" role="img" aria-label="ADW installation: roof, solar panels, home battery and EV charger">
+    <img data-logo src="../assets/adw-mark.png" alt="" width="200" height="200">
+  </div>
+
+  <div style="margin-top:28px">
+    <!-- secondary button on purpose: the contact block below already carries
+         the gold "book a visit" call, and two of those weaken each other -->
+    <a class="btn btn-steel" href="solar.html">See our services</a>
+  </div>
+
+  <script>
+  // Load the animation only when the reader reaches it, so everything above
+  // it costs nothing extra.
+  (function(){
+    var el = document.getElementById('adw-build'), done = false;
+    new IntersectionObserver(function(es, obs){
+      if (!es[0].isIntersecting || done) return;
+      done = true; obs.disconnect();
+      import('../assets/adw-build-animation.js').then(function(m){ m.init(el); });
+    }, { rootMargin: '200px' }).observe(el);
+  })();
+  </script>
+
+  <hr class="hr-gold" style="margin:80px 0">
+
   <div class="sec-head reveal"><div class="eyebrow">How it works</div><h2>From site inspection to switched-on in four steps.</h2></div>
   <div class="steps reveal">
     <div class="step"><div class="n">1</div><h3>Free site inspection</h3><p>We visit, measure, check your roof and bills, and design the right system.</p></div>

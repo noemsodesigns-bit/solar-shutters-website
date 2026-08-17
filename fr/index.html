@@ -568,6 +568,43 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 
   <hr class="hr-gold" style="margin:80px 0">
 
+  <!-- INSTALLATIE-ANIMATIE -->
+  <div class="sec-head reveal"><div class="eyebrow">Votre installation</div><h2>Du toit à la batterie à la borne de recharge</h2>
+    <p class="lead">Panneaux solaires, batterie domestique et borne de recharge — comment une installation se met en place sur votre habitation, étape par étape.</p></div>
+
+  <style>
+  #adw-build{position:relative;aspect-ratio:16/9;min-height:300px;width:100%;
+    border:1px solid var(--line-2);border-radius:2px;overflow:hidden;background:var(--black)}
+  #adw-build canvas{display:block}
+  #adw-build img{position:absolute;left:6%;bottom:8%;z-index:2;width:clamp(110px,14%,190px);
+    height:auto;opacity:0;pointer-events:none;will-change:transform,opacity}
+  @media (max-width:640px){#adw-build{aspect-ratio:4/5}}
+</style>
+  <div id="adw-build" role="img" aria-label="Installation ADW : toiture, panneaux solaires, batterie et borne de recharge">
+    <img data-logo src="../assets/adw-mark.png" alt="" width="200" height="200">
+  </div>
+
+  <div style="margin-top:28px">
+    <!-- secondary button on purpose: the contact block below already carries
+         the gold "book a visit" call, and two of those weaken each other -->
+    <a class="btn btn-steel" href="solar.html">Voir nos services</a>
+  </div>
+
+  <script>
+  // Load the animation only when the reader reaches it, so everything above
+  // it costs nothing extra.
+  (function(){
+    var el = document.getElementById('adw-build'), done = false;
+    new IntersectionObserver(function(es, obs){
+      if (!es[0].isIntersecting || done) return;
+      done = true; obs.disconnect();
+      import('../assets/adw-build-animation.js').then(function(m){ m.init(el); });
+    }, { rootMargin: '200px' }).observe(el);
+  })();
+  </script>
+
+  <hr class="hr-gold" style="margin:80px 0">
+
   <div class="sec-head reveal"><div class="eyebrow">Comment ça marche</div><h2>De la visite technique à la mise en service en quatre étapes.</h2></div>
   <div class="steps reveal">
     <div class="step"><div class="n">1</div><h3>Visite gratuite</h3><p>Nous passons, prenons les mesures, examinons votre toiture et vos factures, et concevons l'installation adaptée.</p></div>
