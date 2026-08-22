@@ -151,6 +151,15 @@ Our certified crew fits it tidy, tests everything, and tidies up after.
 
 Monitoring, warranty and one number to call. We stay in touch.
 
+## Sources
+
+We work from the official sources. Flanders and Wallonia each have their own rules: what applies in Ronse or Oudenaarde does not apply in Ath, Tournai or Lessines.
+
+- Vlaanderen.be — solar panels — the official conditions in Flanders
+- Fluvius — grid operator for Flanders
+- ORES — grid operator for most of Hainaut
+- Energie Wallonie — the Walloon energy portal
+
 ## Let's design your system.
 
 Tell us a little about your home and what you're after. We'll come out, take a look, and send a clear, no-pressure quote.

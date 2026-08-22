@@ -399,3 +399,6 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 .sources li{margin-bottom:7px}
 .sources a{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid var(--line)}
 .sources a:hover{border-bottom-color:var(--gold-bright)}
+
+/* FAQ questions are real <h3> headings for answer engines; keep summary styling */
+.faq-item summary h3.faq-q{font:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit;text-transform:none;color:inherit;display:inline;margin:0;line-height:inherit}

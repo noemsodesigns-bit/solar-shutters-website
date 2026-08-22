@@ -151,6 +151,15 @@ Notre équipe agréée pose proprement, teste tout et range derrière elle.
 
 Suivi, garantie et un seul numéro à appeler. Nous restons en contact.
 
+## Sources
+
+Nous nous basons sur les sources officielles. La Flandre et la Wallonie ont chacune leurs propres règles : ce qui s’applique à Renaix ou Audenarde ne s’applique pas à Ath, Tournai ou Lessines.
+
+- ORES — gestionnaire de réseau pour la majeure partie du Hainaut
+- Energie Wallonie — le portail wallon de l’énergie
+- Vlaanderen.be — panneaux solaires — les conditions officielles en Flandre
+- Fluvius — gestionnaire de réseau pour la Flandre
+
 ## Concevons votre installation.
 
 Parlez-nous brièvement de votre maison et de ce que vous cherchez. Nous passons, regardons sur place, et envoyons un devis clair, sans engagement.

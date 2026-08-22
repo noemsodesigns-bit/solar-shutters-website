@@ -151,6 +151,15 @@ Onze erkende ploeg plaatst alles netjes, test alles en ruimt achteraf op.
 
 Monitoring, waarborg en één nummer om te bellen. We blijven in contact.
 
+## Bronnen
+
+Wij baseren ons op de officiële bronnen. Vlaanderen en Wallonië hebben elk hun eigen regels: wat in Ronse of Oudenaarde geldt, geldt niet in Aat, Doornik of Lessen.
+
+- Vlaanderen.be — zonnepanelen — de officiële voorwaarden in Vlaanderen
+- Fluvius — netbeheerder voor Vlaanderen
+- ORES — netbeheerder voor het grootste deel van Henegouwen
+- Energie Wallonie — het Waalse energieportaal
+
 ## Laat ons uw installatie ontwerpen.
 
 Vertel ons kort iets over uw woning en wat u zoekt. Wij komen langs, kijken ter plaatse, en sturen een duidelijke offerte zonder verplichting.
