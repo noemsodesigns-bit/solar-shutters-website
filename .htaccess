@@ -1,15 +1,22 @@
-# Intentionally empty.
+# Serve the Markdown twin to AI agents that ask for it.
 #
-# 2026-08-22: tested whether one.com processes .htaccess on this account.
-# A probe rewrite (^htaccess-probe$) returned 404, so mod_rewrite rules in
-# .htaccess are NOT applied here -- AllowOverride is off. Any directives
-# placed in this file are silently ignored; do not assume they work.
+# An agent sending "Accept: text/markdown" gets the .md instead of the
+# .html -- roughly 85% fewer tokens for the same content. Browsers never
+# send that header, so people are unaffected.
 #
-# Consequence: we cannot do content negotiation, so we cannot return
-# Markdown when a request carries "Accept: text/markdown". The AI
-# readiness check for that will keep failing on this hosting.
-#
-# The Markdown twins still work as a fallback: every page has a .md twin
-# served as Content-Type: text/markdown, linked from the HTML with
-# <link rel="alternate" type="text/markdown">. Regenerate them with
-# tools-build-markdown.py after any content change.
+# Note: one.com applies .htaccess changes about 30 seconds after upload.
+# Test with a wait, not immediately after deploy.
+<IfModule mod_mime.c>
+  AddType text/markdown .md
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # probe: confirms .htaccess rewrites are being applied
+  RewriteRule ^htaccess-probe$ nl/index.md [L]
+
+  RewriteCond %{HTTP_ACCEPT} markdown [NC]
+  RewriteRule ^(.+)\.html$ $1.md [L]
+</IfModule>
