@@ -148,7 +148,7 @@ h3{font-size:1.25rem;letter-spacing:.8px}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .quotes.quotes-duo{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto}
 .quotes.quotes-solo{grid-template-columns:1fr;max-width:640px;margin:0 auto}
-.quote{background:var(--metal);border:1px solid var(--line);border-radius:4px;padding:30px 28px;border-top:2px solid var(--gold)}
+.quote{background:var(--metal);border:1px solid var(--line);border-radius:4px;padding:30px 28px;border-top:2px solid var(--gold);margin:0}
 .quote .stars{color:var(--gold-bright);letter-spacing:3px;margin-bottom:14px;font-size:.95rem}
 .quote p{color:var(--silver);font-style:italic;margin-bottom:18px}
 .quote .who{font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--silver-bright)}
