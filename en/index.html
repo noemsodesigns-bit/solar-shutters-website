@@ -318,7 +318,8 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
     "streetAddress": "Elzelestraat 137",
     "postalCode": "9600",
     "addressLocality": "Ronse",
-    "addressCountry": "BE"
+    "addressCountry": "BE",
+    "addressRegion": "East Flanders"
   },
   "location": {
     "@type": "Place",
@@ -328,26 +329,127 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
       "streetAddress": "Keistraat 3",
       "postalCode": "9681",
       "addressLocality": "Maarkedal",
-      "addressCountry": "BE"
+      "addressCountry": "BE",
+      "addressRegion": "East Flanders"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7755665,
+      "longitude": 3.6035219
     }
   },
-  "openingHours": "Mo-Fr by appointment",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "description": "By appointment only"
-  },
-  "areaServed": [{"@type":"Place","name":"Maarkedal"}, {"@type":"Place","name":"Ronse"}, {"@type":"Place","name":"Oudenaarde"}, {"@type":"Place","name":"Flemish Ardennes"}],
-  "availableLanguage": ["nl", "fr", "en"],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Ronse"
+    },
+    {
+      "@type": "Place",
+      "name": "Maarkedal"
+    },
+    {
+      "@type": "Place",
+      "name": "Oudenaarde"
+    },
+    {
+      "@type": "Place",
+      "name": "Brakel"
+    },
+    {
+      "@type": "Place",
+      "name": "Kluisbergen"
+    },
+    {
+      "@type": "Place",
+      "name": "Ath"
+    },
+    {
+      "@type": "Place",
+      "name": "Lessines"
+    },
+    {
+      "@type": "Place",
+      "name": "Tournai"
+    },
+    {
+      "@type": "Place",
+      "name": "Ellezelles"
+    },
+    {
+      "@type": "Place",
+      "name": "Flobecq"
+    },
+    {
+      "@type": "Place",
+      "name": "Frasnes-lez-Anvaing"
+    },
+    {
+      "@type": "Place",
+      "name": "Mont-de-l'Enclus"
+    },
+    {
+      "@type": "Place",
+      "name": "Vlaamse Ardennen"
+    },
+    {
+      "@type": "Place",
+      "name": "Pays des Collines"
+    }
+  ],
+  "availableLanguage": [
+    "nl",
+    "fr",
+    "en"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Installaties",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Solar panels"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Smart batteries"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Inverters"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Energy management software"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"EV chargers"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Solar panels"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Smart batteries"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Inverters"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Energy management software"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "EV chargers"
+        }
+      }
     ]
+  },
+  "sameAs": [
+    "https://www.google.com/maps?cid=15996883265993651814"
+  ],
+  "priceRange": "€€",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.7474254,
+    "longitude": 3.6050899
   }
 }
 </script>
@@ -363,6 +465,23 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
   "publisher": { "@id": "https://alu-dewolf.be/#organization" }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://alu-dewolf.be/en/index.html#webpage",
+  "url": "https://alu-dewolf.be/en/index.html",
+  "inLanguage": "en",
+  "dateModified": "2026-08-22",
+  "isPartOf": {
+    "@id": "https://alu-dewolf.be/#website"
+  },
+  "about": {
+    "@id": "https://alu-dewolf.be/#organization"
+  }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="index.md">
 </head>
 <body>
 

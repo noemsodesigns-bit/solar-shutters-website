@@ -391,3 +391,11 @@ form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padd
 /* Zonnepanelen intro: give the photo more of the row (2026-08-11) */
 .duo.photo-lead{grid-template-columns:.85fr 1.15fr;gap:48px}
 @media(max-width:900px){.duo.photo-lead{grid-template-columns:1fr}}
+
+/* Cited sources blocks (GEO: external authority citations) */
+.sources h2{font-size:1.35rem;margin-bottom:12px}
+.sources p{color:var(--silver);margin-bottom:14px;max-width:70ch}
+.sources ul{margin:0 0 0 20px;color:var(--steel);font-size:.95rem}
+.sources li{margin-bottom:7px}
+.sources a{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid var(--line)}
+.sources a:hover{border-bottom-color:var(--gold-bright)}
