@@ -81,8 +81,6 @@ Monitoring, warranty and one number to call. We stay in touch.
 
 ## Installs we're proud to put our name on.
 
-Replace with real photos of your own jobs — that's what wins quotes.
-
 ## Trusted by neighbours, recommended by name.
 
 "Spotless install and the bill speaks for itself — down by two thirds. They explained everything and cleaned up like they were never here."

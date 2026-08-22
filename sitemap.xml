@@ -277,36 +277,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alu-dewolf.be/nl/projects.html"/>
   </url>
   <url>
-    <loc>https://alu-dewolf.be/nl/solar.html</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://alu-dewolf.be/nl/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://alu-dewolf.be/fr/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alu-dewolf.be/en/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alu-dewolf.be/nl/solar.html"/>
-  </url>
-  <url>
-    <loc>https://alu-dewolf.be/fr/solar.html</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://alu-dewolf.be/nl/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://alu-dewolf.be/fr/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alu-dewolf.be/en/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alu-dewolf.be/nl/solar.html"/>
-  </url>
-  <url>
-    <loc>https://alu-dewolf.be/en/solar.html</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://alu-dewolf.be/nl/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://alu-dewolf.be/fr/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alu-dewolf.be/en/solar.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alu-dewolf.be/nl/solar.html"/>
-  </url>
-  <url>
     <loc>https://alu-dewolf.be/nl/terugverdientijd.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>

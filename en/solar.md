@@ -161,8 +161,6 @@ Monitoring, warranty and one number to call. We stay in touch.
 
 ## Installs we're proud to put our name on.
 
-Replace with real photos of your own jobs — that's what wins quotes.
-
 ## Let's design your solar system.
 
 Tell us a little about your home and your roof. We'll come out, take a look, and send a clear, no-pressure quote.

@@ -161,8 +161,6 @@ Suivi, garantie et un seul numéro à appeler. Nous restons en contact.
 
 ## Des installations que nous signons avec fierté.
 
-Remplacez par de vraies photos de vos chantiers — c'est ce qui fait signer les devis.
-
 ## Concevons votre installation solaire.
 
 Parlez-nous brièvement de votre maison et de votre toiture. Nous passons, regardons sur place, et envoyons un devis clair, sans engagement.

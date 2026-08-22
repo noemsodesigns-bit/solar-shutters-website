@@ -30,5 +30,6 @@ Disallow: /shutters.html
 Disallow: /old-site/
 Disallow: /nieuw/
 Disallow: /test/
+Disallow: /_removed/
 
 Sitemap: https://alu-dewolf.be/sitemap.xml

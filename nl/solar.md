@@ -161,8 +161,6 @@ Monitoring, waarborg en één nummer om te bellen. We blijven in contact.
 
 ## Plaatsingen waar we onze naam met plezier op zetten.
 
-Vervang door echte foto's van uw eigen werven — dat is wat offertes binnenhaalt.
-
 ## Laat ons uw zonne-installatie ontwerpen.
 
 Vertel ons kort iets over uw woning en uw dak. Wij komen langs, kijken ter plaatse, en sturen een duidelijke offerte zonder verplichting.
