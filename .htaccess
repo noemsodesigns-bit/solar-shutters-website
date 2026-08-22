@@ -1,0 +1,17 @@
+# Serve the Markdown twin to AI agents that ask for it.
+# An agent sending "Accept: text/markdown" gets /nl/index.md instead of
+# /nl/index.html -- roughly 85% fewer tokens for the same content.
+# Browsers never send that header, so people are unaffected.
+<IfModule mod_mime.c>
+  AddType text/markdown .md
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # only when the client explicitly asks for markdown
+  RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+  # only when the matching .md file actually exists
+  RewriteCond %{DOCUMENT_ROOT}/$1.md -f
+  RewriteRule ^(.+)\.html$ /$1.md [L]
+</IfModule>
